@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'Castledown';
+  src: url('https://uploads-ssl.webflow.com/63921b1aee7ec931506de492/6398619d4e0b7dd83603518f_castledown-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Castledown';
+  src: url('https://uploads-ssl.webflow.com/63921b1aee7ec931506de492/639861fa92a9bd52f1f2d700_castledown-heavy.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Castledown';
+  src: url('https://uploads-ssl.webflow.com/63921b1aee7ec931506de492/639861d761aa3e8a774716d6_castledown-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

@@ -834,7 +834,16 @@ button:hover, #category-fieldset label:hover {
 }
 
 .prompt:focus, .endgame-option:focus, #category-fieldset label:focus{
-  background-color: rgb(249, 70, 249);
+  background-color: #F8E6AD;
+}
+
+.prompt:hover {
+  background-color: #F8E6AD;
+}
+
+.prompt:hover span {
+  background-color: #1B1A2D;
+  color: #F8E6AD;
 }
 
 #category-fieldset label:hover{

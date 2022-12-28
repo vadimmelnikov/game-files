@@ -3,7 +3,7 @@
 // TODO: maybe offsetTop is more suitable than getBoundingClientRect where you've used the latter below
 // IIFE for adding membership info to session data
 // var userId = "637256e04ddf5200040a3ea0";
-var userId = "";
+var userId = "637256e04ddf5200040a3ea0";
 
 $(window).on("resize.custom1", function () {
   setTimeout(() => {

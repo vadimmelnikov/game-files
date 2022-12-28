@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://mykanjo-webapp-ornvt.mongodbstitch.com/kanjo-test-domain-files/drawing-game-test-domain/styles.css"
+    /> -->
+    <link
+      rel="stylesheet"
+      href="./styles.css"
+    />
+    <!--<link rel="stylesheet" href="https://573d-193-117-169-106.eu.ngrok.io/webflowTestDomainVersions/styles.css">-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+
+    <!-- Memberstack -->
+    <script
+      src="https://api.memberstack.io/static/memberstack.js?webflow"
+      data-memberstack-id="009ca39b58bd2515c6aac9248bb6c0cb"
+    ></script>
+
+    <!--<script src="https://573d-193-117-169-106.eu.ngrok.io/webflowTestDomainVersions/script.js" defer></script>-->
+    <title>Static Template</title>
+  </head>
+  <body>
+    <!-- <h1 id="ipad-test">Ipad is red</h1> -->
+    <h1 id="rotate-header">Please turn your device horizontally!</h1>
+    <!-- <div style="background-color: red; height: 40px;"></div> -->
+    <div id="canvas-wrap">
+      <header class="header-game">
+        <svg width="123" height="46" viewBox="0 0 123 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M3.99405 2.4043C4.99671 2.4043 5.80952 3.21711 5.80952 4.21977V16.6828L17.9808 11.3217C18.8983 10.9175 19.9698 11.3337 20.374 12.2513L21.2522 14.245C21.6564 15.1626 21.2402 16.2341 20.3226 16.6383L11.1011 20.7001C9.86267 21.2456 9.63488 22.9055 10.6806 23.7644L20.8403 32.1099C21.6151 32.7464 21.7272 33.8904 21.0908 34.6652L19.708 36.3486C19.0716 37.1234 17.9275 37.2355 17.1528 36.5991L5.80952 27.2815V35.0829C5.80952 36.0855 4.99671 36.8983 3.99405 36.8983H1.81548C0.812816 36.8983 0 36.0855 0 35.0829V21.1367V4.21977C0 3.21711 0.812816 2.4043 1.81548 2.4043H3.99405ZM109.325 31.4472C113.536 31.4472 116.95 28.0334 116.95 23.8222C116.95 19.611 113.536 16.1972 109.325 16.1972C105.114 16.1972 101.7 19.611 101.7 23.8222C101.7 28.0334 105.114 31.4472 109.325 31.4472ZM109.325 37.2567C116.745 37.2567 122.76 31.2419 122.76 23.8222C122.76 16.4025 116.745 10.3877 109.325 10.3877C101.905 10.3877 95.8906 16.4025 95.8906 23.8222C95.8906 31.2419 101.905 37.2567 109.325 37.2567ZM37.0478 31.4521C41.2542 31.4521 44.665 28.0461 44.6728 23.8415L44.6728 23.8127C44.665 19.6081 41.2542 16.2021 37.0478 16.2021C32.8366 16.2021 29.4228 19.6159 29.4228 23.8271C29.4228 28.0383 32.8366 31.4521 37.0478 31.4521ZM44.6728 12.7646C42.5066 11.2687 39.8795 10.3926 37.0478 10.3926C29.6281 10.3926 23.6133 16.4074 23.6133 23.8271C23.6133 31.2468 29.6281 37.2616 37.0478 37.2616C39.8795 37.2616 42.5066 36.3855 44.6728 34.8896V35.4415C44.6728 36.4441 45.4856 37.257 46.4883 37.257H48.6668C49.6695 37.257 50.4823 36.4441 50.4823 35.4415V23.8476L50.4823 23.8271L50.4823 23.8066V12.2034C50.4823 11.2007 49.6695 10.3879 48.6668 10.3879H46.4883C45.4856 10.3879 44.6728 11.2007 44.6728 12.2034V12.7646Z" fill="#F1EDE8"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M87.8721 0.904297C86.8695 0.904297 86.0566 1.71711 86.0566 2.71977V5.06003C86.0566 6.06269 86.8695 6.87551 87.8721 6.87551H90.2124C91.215 6.87551 92.0279 6.06269 92.0279 5.06003V2.71977C92.0279 1.71711 91.215 0.904297 90.2124 0.904297H87.8721ZM89.9192 9.99512C90.9218 9.99512 91.7347 10.8079 91.7347 11.8106V32.1375C91.7347 39.3566 85.8824 45.2089 78.6632 45.2089C71.4441 45.2089 65.5918 39.3566 65.5918 32.1375V30.1106C65.5918 29.1079 66.4046 28.2951 67.4073 28.2951H69.5858C70.5885 28.2951 71.4013 29.1079 71.4013 30.1106V32.1375C71.4013 36.1481 74.6526 39.3994 78.6632 39.3994C82.6739 39.3994 85.9251 36.1481 85.9251 32.1375V11.8106C85.9251 10.8079 86.7379 9.99512 87.7406 9.99512H89.9192ZM68.2626 15.8193C64.0515 15.8193 60.6376 19.2331 60.6376 23.4443V35.2647C60.6376 36.2673 59.8248 37.0802 58.8222 37.0802H56.6436C55.6409 37.0802 54.8281 36.2673 54.8281 35.2647V23.4443C54.8281 16.0246 60.843 10.0098 68.2626 10.0098C75.6823 10.0098 81.6972 16.0246 81.6972 23.4443V25.9663C81.6972 26.9689 80.8844 27.7818 79.8817 27.7818H77.7031C76.7005 27.7818 75.8877 26.9689 75.8877 25.9663V23.4443C75.8877 19.2331 72.4738 15.8193 68.2626 15.8193Z" fill="#FF6745"/>
+        </svg>
+        <div>
+          <div id="top-protrusion">
+            <!-- <p id="selected-prompt" style="display: none;"></p> -->
+            <img src="http://googledrive.com/host/1FDzh3PZdFYDE1m4v_HdMxSTFalOjarDw" alt="bar" width="36" height="36"/>
+            <p id="selected-prompt">Sketch & Guess</p>
+          </div>
+        </div>
+        <div class="header__col">
+          <a href="/">Exit</a>
+        </div>
+      </header>
+      
+      <div id="canvas-border-div">
+        <canvas id="canvas"></canvas>
+      </div>
+      <div id="pregame-card" style="display: none;">
+        <h2 id="pregame-header">Who's playing?</h2>
+        <div id="profiles-container"></div>
+      </div>
+      <div id="game-settings-card" style="display: none;">
+        <form>
+          <p id="category-radio-title">What category would you like to play?</p>
+          <fieldset id="category-fieldset">
+            <input
+              type="radio"
+              id="random"
+              name="category"
+              value="00"
+              checked
+            />
+            <label for="random">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 18.5017C16 18.5017 7.5 6.50171 21 6.50171M21 6.50171L18.5 3.5M21 6.50171L18.5 9.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M22.0024 18.7282C17.787 18.7282 15.6658 17.9574 13.9985 16.5M22.0024 18.7282L19.7173 15.7266M22.0024 18.7282L19.0008 21.5M1.99854 6.5C6.08947 6.5 7.88975 7.52797 9.49854 9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>                
+              Random
+            </label>
+
+            <div id="category-container">
+              <input
+                type="radio"
+                id="category1"
+                name="category"
+                value="01"
+                required
+              />
+              <label for="category1">About Me</label>
+
+              <input type="radio" id="category2" name="category" value="02" />
+              <label for="category2">People, Places and Things</label>
+
+              <input type="radio" id="category3" name="category" value="03" />
+              <label for="category3">Relationships</label>
+
+              <input type="radio" id="category4" name="category" value="04" />
+              <label for="category4">Thoughts and Feelings</label>
+
+              <input type="radio" id="category5" name="category" value="05" />
+              <label for="category5">Learning</label>
+
+              <input type="radio" id="category6" name="category" value="06" />
+              <label for="category6">Art Challenges</label>
+
+              <input type="radio" id="category7" name="category" value="07" />
+              <label for="category7">Imagination</label>
+
+              <input type="radio" id="special" name="category" value="99" />
+              <label for="special">Festive</label>
+            </div>
+          </fieldset>
+
+          <div class="range-wrapper">
+            <p id="difficulty-range-title">Select your difficulty</p>
+            <div class="difficulty-width-slider-wrapper">
+              <span>Easy</span>
+              <div id="difficulty-width-slider-container">
+                <input
+                  type="range"
+                  id="difficulty-width-slider"
+                  name="difficulty-width-slider"
+                  min="1"
+                  max="5"
+                  value="3"
+                  step="1"
+                />
+                <div id="difficulty-width-slider-ticks">
+                  <p>1</p>
+                  <p>2</p>
+                  <p>3</p>
+                  <p>4</p>
+                  <p>5</p>
+                </div>
+              </div>
+              <span>Hard</span>
+            </div>
+          </div>
+          <!-- <datalist id="difficulty-steplist">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </datalist> -->
+          <button id="submit-settings-button" type="button">Start game!</button>
+        </form>
+      </div>
+      <div id="prompts-and-skip-container" style="display: none;">
+        <div id="prompts">
+          <button id="prompt-button-1" type="button" class="prompt"></button>
+          <button id="prompt-button-2" type="button" class="prompt"></button>
+          <button id="prompt-button-3" type="button" class="prompt"></button>
+        </div>
+        <button id="skip-button">
+          <img
+            id="skip-image"
+            src="https://uploads-ssl.webflow.com/635a91b27017ccb474ef21a7/635aa38e849620d2ada2c55c_skip-question.png"
+          />
+        </button>
+      </div>
+      <div id="endgame-options-container" style="display: none;">
+        <button type="button" id="play-again-button" class="endgame-option">
+          Play again
+        </button>
+        <button
+          type="button"
+          id="change-settings-button"
+          class="endgame-option"
+        >
+          Change settings and play again
+        </button>
+        <a
+          class="endgame-option game-end-anchor"
+          href="https://www.mykanjo.com/members/parents-games/drawing-guessing"
+          >Grab a parent and get them to guess</a
+        >
+        <a
+          class="endgame-option game-end-anchor"
+          href="https://www.mykanjo.com/members/kids/games"
+          >Back to games list</a
+        >
+      </div>
+      <div id="canvas-overlay">
+        <div id="canvas-controls-container" style="display: none;">
+          <div>
+            <label for="color-picker">
+              <input
+                type="color"
+                id="color-picker"
+                name="color-picker"
+                list="my-colors"
+              />
+              <div id="pencil-button-selected" class="pencil-button">
+                <img src="./images/pencil.png" alt="pencil"/>
+              </div> 
+            </label>
+              <!-- <input type="color" id="color-picker" name="color-picker" /> -->
+              <datalist id="my-colors">
+                <option>#000000</option>
+                <option>#77340D</option>
+                <option>#F0292D</option>
+                <option>#DC1B71</option>
+                <option>#42B64C</option>
+                <option>#BFBFBF</option>
+                <option>#DC975A</option>
+                <option>#F67823</option>
+                <option>#FAC9DE</option>
+                <option>#7ACDC7</option>
+                <option>#FFFFFF</option>
+                <option>#F1DACA</option>
+                <option>#FCF012</option>
+                <option>#7B5DA5</option>
+                <option>#0F6CB9</option>
+              </datalist>
+            </div>
+
+            <button id="eraser-button" class="eraser-button">
+              <img
+                id="eraser-image"
+                src="./images/lastick.png"
+              />
+            </button>
+            <div id="stroke-width-slider-container">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_684_5161)">
+                <rect x="24" y="9" width="6" height="24" rx="3" transform="rotate(90 24 9)" fill="#F1EDE8"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_684_5161">
+                <rect width="24" height="24" fill="white"/>
+                </clipPath>
+                </defs>
+              </svg>                
+              <input
+                type="range"
+                id="stroke-width-slider"
+                name="stroke-width-slider"
+                min="1"
+                max="30"
+                value="16"
+                step="1"
+              />
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 0C10.3431 0 9 1.34315 9 3V9H3C1.34315 9 0 10.3431 0 12C0 13.6569 1.34315 15 3 15H9V21C9 22.6569 10.3431 24 12 24C13.6569 24 15 22.6569 15 21V15H21C22.6569 15 24 13.6569 24 12C24 10.3431 22.6569 9 21 9H15V3C15 1.34315 13.6569 0 12 0Z" fill="#F1EDE8"/>
+              </svg>                
+            </div>
+        </div>
+        <div id="submit-countdown-container" style="display: none;">
+          <div id="countdown">
+            <svg
+              id="countdown-svg"
+              data-name="Layer 1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 87 87"
+            >
+              <circle class="timer-circle" cx="43.5" cy="43.5" r="30" />
+              <circle class="cls-1" cx="43.5" cy="43.5" r="30" />
+            </svg>
+            <span id="countdown-number"></span>
+          </div>
+
+          <button type="button" id="submit-early-button">Submit</button>
+          
+          <!-- <div id="countdown">
+        <svg id="countdown-svg">
+          <circle r='18' cx='20' cy='20'></circle>
+        </svg>
+      </div> -->
+          <!-- <p id="countdown-number"></p> -->
+        </div>
+      </div>
+    </div>
+    <!-- <div style="height: 400px; width: 300px; background-color: red"></div> -->
+    <!-- <div style="background-color: green; height: 200px;"></div> -->
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      defer
+    ></script>
+    <script src="https://unpkg.com/bowser@2.7.0/es5.js" defer></script>
+    <script src="./script.js" defer></script>
+    <!-- <script
+      src="https://mykanjo-webapp-ornvt.mongodbstitch.com/kanjo-test-domain-files/drawing-game-test-domain/script.js"
+      defer
+    ></script> -->
+  </body>
+</html>

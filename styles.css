@@ -15,10 +15,9 @@ body {
 }
 
 .header-game {
-  display: grid;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  grid-template-columns: 1fr 1fr 1fr;
   width: 100%;
   padding: 0 110px;
   padding-top: 8px;
@@ -26,6 +25,7 @@ body {
 
 .header__col {
   text-align: right;
+  margin-bottom: 4px;
 }
 
 .header-game a {
@@ -38,6 +38,12 @@ body {
   line-height: 26px;
   padding: 17px 32px;
   border-radius: 40px;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.header-game a:hover {
+  color: #323142;
+  background-color: #F1EDE8;
 }
 
 #pregame-card {
@@ -122,7 +128,7 @@ body {
   border-radius: 15px;
   padding: 30px 50px;
   z-index: 2;
-  max-width: 1200px;
+  max-width: 1150px;
   /*
 
   background-color: #b9a2cf;
@@ -192,11 +198,13 @@ body {
 
 #category-fieldset [for~="special"]{
   --color-blue: #5FA9ED;
-  background: conic-gradient(from -3.66deg at 50% 120.26%, var(--color-blue) 0deg, #FF3D3D 119.83deg, #FA57CC 200.63deg, #FFD073 244.95deg, #D3EFB9 311.25deg, var(--color-blue) 360deg), #41449A;
+  background-image: url('https://raw.githack.com/vadimmelnikov/game-files/main/images/special-button.jpg');
+  background-size: cover;
+  transition: background-image 0.3s;
 }
 
 #category-fieldset [for~="special"]:hover {
-  background: conic-gradient(from 188.3deg at 43.33% 111.54%, var(--color-blue) 0deg, #FF3D3D 118.48deg, #FA57CC 170.99deg, #FFD073 232.18deg, #D3EFB9 311.25deg, var(--color-blue) 360deg), #41449A;
+  background-image: url('https://raw.githack.com/vadimmelnikov/game-files/main/images/special-button-hover.jpg');
   color: #F8E6AD;
 }
 
@@ -206,8 +214,8 @@ body {
 }
 
 #category-fieldset input[id~="special"]:checked + label {
-  background-image: none;
-  background: conic-gradient(from 188.3deg at 43.33% 111.54%, #5FA9ED 0deg, #FF3D3D 118.48deg, #FA57CC 170.99deg, #FFD073 232.18deg, #D3EFB9 311.25deg, #5FA9ED 360deg), #41449A;
+  background-image: url('./images/special-button-hover.jpg');
+  outline: 4px solid #F8E6AD;
 }
 
 #difficulty-width-slider-container {
@@ -437,15 +445,69 @@ body {
 } */
 
 #endgame-options-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  animation: fade-in 0.5s;
+  -webkit-animation: fade-in 0.5s;
+  -moz-animation: fade-in 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+#endgame-options-container::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(27, 26, 45, 0.3);
+  backdrop-filter: blur(12px);
+  z-index: 19;
+}
+
+.endgame-wrapper {
+  background: #FFFFFF;
+  box-shadow: 0px 24px 44px rgba(0, 0, 0, 0.15);
+  border-radius: 45px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  gap: 30px;
-  animation: fade-in 0.5s;
-  -webkit-animation: fade-in 0.5s;
-  -moz-animation: fade-in 0.5s;
+  padding: 48px;
+  max-width: 540px;
+  width: 100%;
+  position: relative;
+  z-index: 21;
+}
+
+.endgame-wrapper h4 {
+  margin: 0;
+  margin-bottom: 4px;
+  font-weight: 900;
+  font-size: 46px;
+  line-height: 56px;
+  text-align: center;
+  color: #1B1A2D;
+}
+
+.endgame-wrapper p {
+  margin: 0;
+  margin-bottom: 48px;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: center;
+  color: #1B1A2D;
+}
+
+.endgame-wrapper button, .endgame-wrapper a {
+  margin-bottom: 16px;
 }
 
 #eraser-button-selected {
@@ -641,6 +703,11 @@ body {
   border-radius: 75px;
   height: 80px;
   color: #F1EDE8;
+  transition: background-color 0.3s;
+}
+
+#submit-early-button:hover, #submit-settings-button:hover {
+  background-color: #41449A;
 }
 
 /* #countdown {
@@ -744,7 +811,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  /* gap: 30px; */
   padding: 25px 50px;
   /* background-color: #b9a2cf; */
   border-radius: 15px;
@@ -791,7 +858,7 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
   margin: 0;
   /* padding: 1.5vw; */
 }
@@ -804,7 +871,7 @@ button:hover, #category-fieldset label:hover {
   color: #1B1A2D;
 }
 
-.prompt, .endgame-option {
+.prompt {
   font-weight: 900;
   font-size: 32px;
   line-height: 42px;
@@ -816,6 +883,7 @@ button:hover, #category-fieldset label:hover {
   cursor: pointer;
   background-color: #323142;
   color: #F8E6AD;
+  transition: background-color 0.3s, color 0.3s;
 }
 .prompt span {
   display: inline-flex;
@@ -827,10 +895,6 @@ button:hover, #category-fieldset label:hover {
   border-radius: 100px;
   color: #1B1A2D;
   margin-right: 24px;
-}
-
-.game-end-anchor {
-  background-color: #f6a030;
 }
 
 .prompt:focus, .endgame-option:focus, #category-fieldset label:focus{
@@ -853,15 +917,78 @@ button:hover, #category-fieldset label:hover {
 .endgame-option {
   text-decoration: none;
   display: flex;
+  border: 0;
   justify-content: center;
   align-items: center;
+  border: 3px solid #FF6745;
+  color: #FF6745;
+  border-radius: 75px;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 42px;
+  letter-spacing: -0.02em;
+  width: 100%;
+  height: 96px;
+  cursor: pointer;
+  transition: border-color 0.3s, color 0.3s;
+}
+
+.endgame-option:hover {
+  border-color: #41449A;
+  color: #41449A;
+}
+
+.endgame-option-primary {
+  text-decoration: none;
+  display: flex;
+  border: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: #FF6745;
+  color: #fff;
+  border-radius: 75px;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 42px;
+  letter-spacing: -0.02em;
+  width: 100%;
+  height: 96px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.endgame-option-primary:hover {
+  background: #41449A;
+  color: #fff;
 }
 
 #skip-button {
   cursor: pointer;
-  background-color: transparent;
   border: none;
   touch-action: manipulation;
+  display: flex;
+  align-items: center;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 42px;
+  letter-spacing: -0.02em;
+  border: none;
+  border-radius: 75px;
+  padding: 0 24px;
+  min-height: 90px;
+  cursor: pointer;
+  background-color: #323142;
+  color: #F8E6AD;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#skip-button svg {
+  margin-right: 24px;
+}
+
+#skip-button:hover {
+  background-color: #F8E6AD;
+  color: #1B1A2D;
 }
 
 #skip-image {

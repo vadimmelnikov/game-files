@@ -47,7 +47,7 @@
           </div>
         </div>
         <div class="header__col">
-          <a href="/">Exit</a>
+          <a href="https://www.mykanjo.com/members/kids/games">Exit</a>
         </div>
       </header>
       
@@ -62,22 +62,22 @@
         <form>
           <p id="category-radio-title">What category would you like to play?</p>
           <fieldset id="category-fieldset">
-            <input
+
+            <div id="category-container">
+              <input
               type="radio"
               id="random"
               name="category"
               value="00"
               checked
-            />
-            <label for="random">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2 18.5017C16 18.5017 7.5 6.50171 21 6.50171M21 6.50171L18.5 3.5M21 6.50171L18.5 9.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M22.0024 18.7282C17.787 18.7282 15.6658 17.9574 13.9985 16.5M22.0024 18.7282L19.7173 15.7266M22.0024 18.7282L19.0008 21.5M1.99854 6.5C6.08947 6.5 7.88975 7.52797 9.49854 9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>                
-              Random
-            </label>
-
-            <div id="category-container">
+              />
+              <label for="random">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2 18.5017C16 18.5017 7.5 6.50171 21 6.50171M21 6.50171L18.5 3.5M21 6.50171L18.5 9.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M22.0024 18.7282C17.787 18.7282 15.6658 17.9574 13.9985 16.5M22.0024 18.7282L19.7173 15.7266M22.0024 18.7282L19.0008 21.5M1.99854 6.5C6.08947 6.5 7.88975 7.52797 9.49854 9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>                
+                Random
+              </label>
               <input
                 type="radio"
                 id="category1"
@@ -152,33 +152,37 @@
           <button id="prompt-button-3" type="button" class="prompt"></button>
         </div>
         <button id="skip-button">
-          <img
-            id="skip-image"
-            src="https://uploads-ssl.webflow.com/635a91b27017ccb474ef21a7/635aa38e849620d2ada2c55c_skip-question.png"
-          />
+          <svg width="59" height="58" viewBox="0 0 59 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M57.9995 29.9091C57.9995 30.4729 57.7808 31.0043 57.3854 31.4026L48.9576 39.5978C48.5613 39.996 48.0348 40.2168 47.4758 40.2168C46.9144 40.2168 46.3884 39.9969 45.9926 39.5978L37.7083 31.4026C36.892 30.5787 36.892 29.2387 37.7083 28.4153H44.2361C43.6841 20.7113 37.3067 14.6336 29.5164 14.6336C25.0869 14.6336 21.1155 16.6009 18.4103 19.7126L13.0769 15.7832C16.9933 11.0289 22.9033 8 29.5164 8C40.9472 8 50.2796 17.0457 50.8407 28.4165H57.3868C57.7813 28.8152 58 29.3458 58 29.91L57.9995 29.9091ZM1.61367 30.5835H8.15971C8.7206 41.9546 18.0524 51 29.484 51C36.0972 51 42.0086 47.9711 45.9236 43.2168L40.5901 39.2874C37.8854 42.3986 33.9144 44.366 29.484 44.366C21.6932 44.366 15.3163 38.2882 14.7644 30.5843H21.2912C22.1093 29.7612 22.1093 28.4208 21.2912 27.597L13.0079 19.4018C12.6111 19.0027 12.0851 18.7836 11.5247 18.7836C10.9647 18.7836 10.4382 19.0035 10.0419 19.4018L1.61413 27.597C1.21783 27.9961 1 28.5258 1 29.0904C1 29.6555 1.21873 30.1852 1.61413 30.5844L1.61367 30.5835Z" fill="currentColor"/>
+            </svg>            
+          Other topics
         </button>
       </div>
       <div id="endgame-options-container" style="display: none;">
-        <button type="button" id="play-again-button" class="endgame-option">
-          Play again
-        </button>
-        <button
-          type="button"
-          id="change-settings-button"
-          class="endgame-option"
-        >
-          Change settings and play again
-        </button>
-        <a
-          class="endgame-option game-end-anchor"
-          href="https://www.mykanjo.com/members/parents-games/drawing-guessing"
-          >Grab a parent and get them to guess</a
-        >
-        <a
-          class="endgame-option game-end-anchor"
-          href="https://www.mykanjo.com/members/kids/games"
-          >Back to games list</a
-        >
+        <div class="endgame-wrapper">
+          <h4>Good, good!</h4>
+          <p>Let’s decide what’s next</p>
+          <button type="button" id="play-again-button" class="endgame-option-primary">
+            Play again
+          </button>
+          <button
+            type="button"
+            id="change-settings-button"
+            class="endgame-option"
+          >
+            Play with new settings 
+          </button>
+          <a
+            class="endgame-option"
+            href="https://www.mykanjo.com/members/parents-games/drawing-guessing"
+            >Grab a parent & guess</a
+          >
+          <a
+            class="endgame-option"
+            href="https://www.mykanjo.com/members/kids/games"
+            >Back to games list</a
+          >
+       </div>
       </div>
       <div id="canvas-overlay">
         <div id="canvas-controls-container" style="display: none;">

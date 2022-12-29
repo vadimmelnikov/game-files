@@ -624,6 +624,7 @@ $promptButtons.click(function () {
   $prompts.hide(0);
   $skipButton.hide(0);
   $selectedPrompt.text($(this).text());
+  $canvas.css("background-color", "#fff");
   beginDrawing();
 });
 
@@ -731,7 +732,7 @@ const handleGameEnd = function () {
   $selectedPrompt.text("Sketch & Guess");
 
   $endgameOptions.show(0);
-  centerElementInCanvas($endgameOptions);
+  // centerElementInCanvas($endgameOptions);
   // $endgameOptions.css("top", ($canvasWrap.height() - $endgameOptions.height()) / 2);
 };
 
@@ -776,7 +777,7 @@ const startNewRound = async function () {
   updatePrompts();
   $prompts.show(0);
   $skipButton.show(0);
-  $canvas.css("background-color", "#fff");
+
   // $promptsAndSkipContainer.css("background-color", "#b9a2cf");
   // without the setTimeout, on iPad specifically (thanks apple) the prompts sometimes pop in rather than fading in smoothly
   setTimeout(() => {

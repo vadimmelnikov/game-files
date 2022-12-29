@@ -623,7 +623,8 @@ $promptButtons.click(function () {
   $promptsAndSkipContainer.hide(0);
   $prompts.hide(0);
   $skipButton.hide(0);
-  $selectedPrompt.text($(this).text());
+  $selectedPrompt.html($(this).html());
+  console.log('($(this)', $(this));
   $canvas.css("background-color", "#fff");
   beginDrawing();
 });

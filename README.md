@@ -16,7 +16,9 @@ https://mykanjo-webapp-ornvt.mongodbstitch.com/kanjo-production-domain-files/dra
 Регистрируемся (авторизируемся)
 https://www.mykanjo.com
 
-Копируем id 
+Копируем id на странице 
+https://www.mykanjo.com/members/kids/drawing-game
+
 drawingData.userInfo.memberstackID
 
 Вставляем его в js 

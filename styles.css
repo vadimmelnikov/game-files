@@ -21,6 +21,7 @@ body {
   width: 100%;
   padding: 0 110px;
   padding-top: 8px;
+  margin-bottom: 24px;
 }
 
 .header__col {
@@ -145,9 +146,12 @@ body {
 }
 
 #game-settings-card form > p {
-  font-size: 1.8rem;
-  line-height: 1.9rem;
-  margin-bottom: 0;
+  font-weight: 900;
+  font-size: 46px;
+  line-height: 56px;
+  margin-bottom: 40px;
+  max-width: 620px;
+  text-align: center;
 }
 
 #category-fieldset {
@@ -181,11 +185,11 @@ body {
   border-radius: 75px;
   background-color: #323142;
   color: #F8E6AD;
-  padding: 12px 24px;
+  padding: 0 32px;
+  min-height: 58px;
   font-weight: 900;
   font-size: 20px;
   line-height: 26px;
-  letter-spacing: -0.02em;
   cursor: pointer;
   transition: background-color 0.3s;
   display: flex;
@@ -365,12 +369,11 @@ body {
   justify-content: center;
   align-items: center;
   height: 60px;
-  max-height: 90px;
   padding: 12px;
+  padding-right: 18px;
   border-radius: 40px;
   position: relative;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-  margin-bottom: 4px;
 }
 
 #top-protrusion img {
@@ -416,7 +419,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 24px;
   /* background-color: #323142; */
   /* border-radius: 70px; */
   position: absolute;
@@ -425,18 +427,17 @@ body {
   height: 96px;
   width: 100%;
   overflow-y: hidden;
+  display: none;
   /* box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px; */
 }
 
 #canvas-controls-container {
   display: flex;
   align-items: center;
-  gap: 20px;
   background-color: #323142;
   border-radius: 70px;
   height: 96px;
-  padding: 0 24px;
-  padding-left: 64px;
+  padding: 0 36px;
   animation: fade-in 0.5s;
   -webkit-animation: fade-in 0.5s;
   -moz-animation: fade-in 0.5s;}
@@ -550,6 +551,7 @@ body {
   align-items: center;
   font-size: 24px;
   gap: 12px;
+  margin-left: 36px;
 }
 
 #stroke-width-slider-container p:first-of-type {
@@ -671,6 +673,52 @@ body {
   /* overflow: auto; */
 }
 
+.color-picker-wrapper {
+  margin-left: 32px;
+  margin-right: 20px;
+}
+
+.color-picker-item {
+  margin-right: 14px;
+  position: relative;
+}
+
+
+.color-picker-item span {
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  display: block;
+  transition: transform 0.3s;
+  pointer-events: none;
+}
+
+.color-picker-item input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.color-picker-item input:not(:checked):hover + span {
+  transform: scale(1.1);
+}
+
+.color-picker-item input:checked + span::after {
+  content: '';
+  position: absolute;
+  width: calc(100% + 12px);
+  height: calc(100% + 12px);
+  left: -8px;
+  top: -8px;
+  border: 2px solid #F1EDE8;
+  border-radius: 100%;
+}
+
 /* #color-selector-svg {
   height: 60px;
   width: auto;
@@ -710,14 +758,14 @@ body {
   border: none;
   border-radius: 8px;
   background-color: #FF6745;
-  padding: 0 36px;
+  padding: 0 42px;
   cursor: pointer;
   font-weight: 900;
   font-size: 32px;
   line-height: 42px;
   letter-spacing: -0.02em;
   border-radius: 75px;
-  height: 80px;
+  height: 96px;
   color: #F1EDE8;
   transition: background-color 0.3s;
 }
@@ -843,6 +891,15 @@ body {
   width: 75%;
   max-width: 75%;
   /* box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px; */
+}
+
+#prompts-and-skip-container h2 {
+  font-weight: 900;
+  font-size: 46px;
+  line-height: 56px;
+  text-align: center;
+  color: #F1EDE8;
+  margin-bottom: 60px;
 }
 
 @-webkit-keyframes fade-in{
@@ -998,13 +1055,8 @@ button:hover, #category-fieldset label:hover {
   transition: background-color 0.3s, color 0.3s;
 }
 
-#skip-button svg {
+#skip-button img {
   margin-right: 24px;
-}
-
-#skip-button:hover {
-  background-color: #F8E6AD;
-  color: #1B1A2D;
 }
 
 #skip-image {
@@ -1022,6 +1074,7 @@ button:hover, #category-fieldset label:hover {
   border-radius: 44px;
   max-width: 638px;
   width: 100%;
+  margin-bottom: 40px;
 }
 
 .range-wrapper p {
@@ -1029,7 +1082,7 @@ button:hover, #category-fieldset label:hover {
   font-size: 20px;
   line-height: 26px;
   color: #F1EDE8;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 /* @media only screen and (max-width: 480px)  */

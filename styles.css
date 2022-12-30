@@ -683,6 +683,10 @@ body {
   position: relative;
 }
 
+.color-picker-item label{
+  margin: 0;
+}
+
 
 .color-picker-item span {
   width: 36px;

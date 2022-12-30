@@ -681,6 +681,8 @@ body {
 .color-picker-item {
   margin-right: 14px;
   position: relative;
+  width: 36px;
+  height: 36px;
 }
 
 

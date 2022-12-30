@@ -681,8 +681,6 @@ body {
 .color-picker-item {
   margin-right: 14px;
   position: relative;
-  width: 36px;
-  height: 36px;
 }
 
 
@@ -713,8 +711,8 @@ body {
 .color-picker-item input:checked + span::after {
   content: '';
   position: absolute;
-  width: calc(100% + 12px);
-  height: calc(100% + 12px);
+  width: calc(36px + 12px);
+  height: calc(36px + 12px);
   left: -8px;
   top: -8px;
   border: 2px solid #F1EDE8;

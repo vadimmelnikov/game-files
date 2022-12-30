@@ -3,8 +3,7 @@
 // TODO: maybe offsetTop is more suitable than getBoundingClientRect where you've used the latter below
 // IIFE for adding membership info to session data
 
-// Marina profile ID 
-var userId = "6399ab9269253100049eef34";
+var userId = "";
 
 $(window).on("resize.custom1", function () {
   setTimeout(() => {

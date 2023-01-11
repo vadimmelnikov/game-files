@@ -159,6 +159,7 @@ const $submitEarlyButton = $("#submit-early-button");
 const $endgameOptions = $("#endgame-options-container");
 const $playAgainButton = $("#play-again-button");
 const $changeSettingsPlayAgainButton = $("#change-settings-button");
+const $body = $("body");
 
 
 const mobileMediaMatcher = window.matchMedia(
@@ -561,6 +562,13 @@ $pencilButton.on("touchstart", () => {
   }
 });
 
+// gm js
+$('#canvas-controls-container .color-picker-item input').on( 'click', function(){
+  context.strokeStyle = $(this).val();
+})
+    
+
+
 // Create globally accessible obj for accessing prompt data across functions
 let promptParameters = {
   promptObj: {},
@@ -627,7 +635,8 @@ $promptButtons.click(function () {
   $selectedPrompt.html($(this).html());
   console.log('($(this)', $(this));
   $canvas.css("background-color", "#fff");
-  $canvasOverlay.css("display", "flex");
+  // $canvasOverlay.css("display", "flex");
+  $body.addClass('gmactive');
   beginDrawing();
 });
 
@@ -790,3 +799,6 @@ const startNewRound = async function () {
   }, 0);
   resetStrokeParameters();
 };
+
+
+

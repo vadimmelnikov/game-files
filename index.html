@@ -34,7 +34,11 @@
   </head>
   <body>
     <!-- <h1 id="ipad-test">Ipad is red</h1> -->
-    <h1 id="rotate-header">Please turn your device horizontally!</h1>
+    <div id="rotate-header">
+      <img src="https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63bd763c420f8d07320ccd7b_Vector.png" alt="rotate">
+      <h1>Please turn your device horizontally!</h1>
+    </div>
+    
     <!-- <div style="background-color: red; height: 40px;"></div> -->
     <div id="canvas-wrap">
       <header class="header-game">
@@ -44,10 +48,13 @@
             <!-- <p id="selected-prompt" style="display: none;"></p> -->
             <img src="https://raw.githack.com/vadimmelnikov/game-files/main/images/bar-icon.png" alt="bar" width="36" height="36"/>
             <p id="selected-prompt">Sketch & Guess</p>
-          </div>
+            <span class="gm_exit_parent">
+              <a href="https://www.mykanjo.com/members/kids/games" class="gm_exit"><img src="https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63ba712715cbc741ca8bac4f_gm-exit.png" alt="exit"></a>
+            </span>
+            </div>
         </div>
         <div class="header__col">
-          <a href="https://www.mykanjo.com/members/kids/games">Exit</a>
+          <a href="https://www.mykanjo.com/members/kids/games" class="header_exit">Exit</a>
         </div>
       </header>
       
@@ -55,7 +62,7 @@
         <canvas id="canvas"></canvas>
       </div>
       <div id="pregame-card" style="display: none;">
-        <h2 id="pregame-header">Who's playing?</h2>
+        <h2 id="pregame-header">Who is here?</h2>
         <div id="profiles-container"></div>
       </div>
       <div id="game-settings-card" style="display: none;">
@@ -315,7 +322,7 @@
       defer
     ></script>
     <script src="https://unpkg.com/bowser@2.7.0/es5.js" defer></script>
-    <script src="./script.js" defer></script>
+    <script src="./script-demo.js" defer></script>
     <!-- <script
       src="https://mykanjo-webapp-ornvt.mongodbstitch.com/kanjo-test-domain-files/drawing-game-test-domain/script.js"
       defer

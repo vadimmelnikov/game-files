@@ -675,7 +675,7 @@ const startCountdown = function () {
     });
     timeUp();
     // handleGameEnd();
-  }, 5000);
+  }, 60000);
 
   $submitEarlyButton.click(() => {
     drawingData.UTCEndDate = Date.now() - gameParameters.gameStartTime;

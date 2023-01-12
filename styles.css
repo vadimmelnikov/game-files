@@ -177,6 +177,88 @@ body {
   align-items: center;
 }
 
+.defbutton {
+  text-decoration: none;
+  display: flex;
+  border: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  width: 136px;
+}
+
+.setting_cont{
+  display: flex;
+  flex-direction: column;
+  width: inherit;
+}
+
+.set_cols {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.sett_col {
+  width: inherit;
+}
+
+.sett_col_img {
+  width: inherit;
+  border-radius: 45px;
+  height: 136px;
+  margin-bottom: 14px;
+  background-color: #F1EDE8;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+.sett_col_img.playagain {
+  background-color: #FF6745;
+  background-image: url('https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63c0199a8a081749c714b7ed_play.svg');
+}
+
+.playnew {
+  background-image: url('https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63c0199afd55873d4ac356ee_star.svg');
+}
+
+.playguess {
+  background-image: url('https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63c0199accb1e13d3539b748_man.svg');
+}
+
+.backlist {
+  background-image: url('https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63c0199a763278d2a8bf6a2c_back.svg');
+}
+
+.sett_col_img:hover{
+  background-color: #41449A;
+}
+
+.sett_col_img.playnew:hover{
+  background-image: url('https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63c0199a82dad76f6b782654_star_h.svg');
+}
+
+.sett_col_img.playguess:hover{
+  background-image: url('https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63c0199a0fc06206ea44dd92_man_h.svg');
+}
+
+.sett_col_img.backlist:hover{
+  background-image: url('https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63c0199a70936249ddd9ec6b_back_h.svg');
+}
+
+.sett_col span{
+  font-size: 20px;
+  color: #1B1A2D;
+  font-style: normal;
+  font-weight: 900;
+}
+
+
+
+
+
 #category-fieldset label svg {
   margin-right: 12px;
 }
@@ -391,7 +473,7 @@ body {
   transition: top 0.3s;
 }
 
-#endgame-options-container {
+#endgame-options-container, .tim-up {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -406,7 +488,7 @@ body {
   z-index: 20;
 }
 
-#endgame-options-container::after {
+#endgame-options-container::after, .tim-up::after {
   content: '';
   position: absolute;
   width: 100%;
@@ -682,7 +764,7 @@ body {
   background-color: #41449A;
 }
 
-#countdown {
+#countdown, .zerotime {
   width: 122px;
   height: 122px;
   border-radius: 50%;
@@ -706,11 +788,28 @@ body {
   stroke-width: 7px;
 }
 
+.zerotime-svg  .timer-circle{
+  stroke: #f2ede7;
+}
+
+.zerotime-cls {
+  fill: none;
+  stroke: #ff6744;
+  stroke-linejoin: round;
+  stroke-width: 7px;
+  stroke-dashoffset: 490;
+  stroke-dasharray: 500;
+  /*animation: 160s circletimer linear;*/
+}
+
 #countdown-svg {
   transform: rotateY(-180deg) rotateZ(-90deg);
 }
+.zerotime-svg {
+  transform: rotateY(-180deg) rotateZ(-110deg);
+}
 
-#countdown-number {
+#countdown-number,.zerotime-number {
   position: absolute;
   display: block;
   top: 50%;
@@ -722,6 +821,11 @@ body {
   line-height: 42px;
   letter-spacing: -0.02em;
 }
+
+.zerotime-number {
+  color: #ff6744;
+}
+
 #ipad-test {
   color: green;
 }
@@ -1294,7 +1398,7 @@ button:hover, #category-fieldset label:hover {
     height: 20px;
   }
 
-  #countdown {
+  #countdown, .zerotime {
     width: 42px;
     height: 42px;
   }
@@ -1303,11 +1407,11 @@ button:hover, #category-fieldset label:hover {
     stroke-width: 11px;
   }
 
-  #countdown-number {
+  #countdown-number, .zerotime-number {
     font-size: 13px;
   }
 
-  #endgame-options-container {
+  #endgame-options-container, .tim-up {
     gap: 15px;
   }
 
@@ -1555,11 +1659,11 @@ button:hover, #category-fieldset label:hover {
     font-size: 20px;
     line-height: 26px;
   }
-  #countdown{
+  #countdown, .zerotime{
     width: 70px;
     height: 70px;
   }
-  #countdown-number{
+  #countdown-number, .zerotime-number{
     font-size: 23px;
     line-height: 30px;
   }
@@ -1593,3 +1697,24 @@ button:hover, #category-fieldset label:hover {
   }
 }
 
+@media only screen and (max-width: 760px) and (orientation: landscape) {
+  .setting_cont {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .set_cols {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  }
+  .endgame-wrapper {
+    padding: 0px;
+    max-width: none;
+    width: inherit;
+  }
+}

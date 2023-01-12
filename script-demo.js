@@ -3,7 +3,7 @@
 // TODO: maybe offsetTop is more suitable than getBoundingClientRect where you've used the latter below
 // IIFE for adding membership info to session data
 
-// Marina profile ID 
+// Marina profile ID
 var userId = "6399ab9269253100049eef34";
 
 $(window).on("resize.custom1", function () {
@@ -43,7 +43,7 @@ $(window).on("resize.custom1", function () {
     });
     const firstName = name.match(/\w+/g)[0];
     const $playerCard = $(
-      `<button class="player-card">
+        `<button class="player-card">
         <img class="player-card-avatar" src='https://uploads-ssl.webflow.com/6315d8bfcaf1234c30aa1942/${matchedStr}.jpg'>
         <p class="player-card-name">${firstName}</p>
       </button>`
@@ -160,6 +160,10 @@ const $endgameOptions = $("#endgame-options-container");
 const $playAgainButton = $("#play-again-button");
 const $changeSettingsPlayAgainButton = $("#change-settings-button");
 const $body = $("body");
+const $timUp = $("#timUp");
+const $continuePlay = $("#continuePlay");
+const $gameDone = $("#gameDone");
+const $countdown = $("#countdown");
 
 
 const mobileMediaMatcher = window.matchMedia(
@@ -338,6 +342,7 @@ const resetStrokeParameters = function () {
   $strokeWidthSlider.val(16);
   $eraserButton.prop("id", "eraser-button");
   $pencilButton.prop("id", "pencil-button-selected");
+  // $canvasOverlay.css({display: 'block'})
 };
 
 // Three painting / erasing functions for 1) starting new stroke 2) continuing stroke and 3) ending stroke
@@ -566,7 +571,7 @@ $pencilButton.on("touchstart", () => {
 $('#canvas-controls-container .color-picker-item input').on( 'click', function(){
   context.strokeStyle = $(this).val();
 })
-    
+
 
 
 // Create globally accessible obj for accessing prompt data across functions
@@ -622,7 +627,7 @@ $skipButton.click(async () => {
 $promptButtons.click(function () {
   const promptsSelectedTime = Date.now();
   drawingData.selectedPromptAbsoluteNumber =
-    promptParameters.promptObj.number_absolute;
+      promptParameters.promptObj.number_absolute;
   drawingData.promptData.push({
     promptNumberAbsolute: promptParameters.promptObj.number_absolute,
     displayTime: promptsSelectedTime - promptParameters.promptShowTimestamp,
@@ -635,6 +640,8 @@ $promptButtons.click(function () {
   $selectedPrompt.html($(this).html());
   console.log('($(this)', $(this));
   $canvas.css("background-color", "#fff");
+  $canvasOverlay.css({display: "flex"})
+  $countdown.css({display: 'flex'});
   // $canvasOverlay.css("display", "flex");
   $body.addClass('gmactive');
   beginDrawing();
@@ -660,14 +667,15 @@ const startCountdown = function () {
     drawingData.UTCEndDate = Date.now() - gameParameters.gameStartTime;
     drawingData.outOfTime = true;
     clearInterval(countdownInterval);
-    $submitEarlyButton.unbind();
+    // $submitEarlyButton.unbind();
     const dashOffset = $("#countdown-svg circle").css("stroke-dashoffset");
     $("#countdown-svg circle").css({
       animation: "none",
       "stroke-dashoffset": dashOffset
     });
-    handleGameEnd();
-  }, 60000);
+    timeUp();
+    // handleGameEnd();
+  }, 5000);
 
   $submitEarlyButton.click(() => {
     drawingData.UTCEndDate = Date.now() - gameParameters.gameStartTime;
@@ -683,7 +691,22 @@ const startCountdown = function () {
   });
 };
 
-const handleGameEnd = function () {
+
+
+const timeUp = function () {
+  $timUp.css({display: 'flex'});
+}
+
+$continuePlay.click(() => {
+  $timUp.css({display: 'none'});
+  $countdown.css({display: 'none'});
+})
+
+$gameDone.click(() => {
+  handleGameEnd(true);
+})
+
+const handleGameEnd = function (isRedirect = false) {
   $canvas.unbind();
   resetStrokeParameters();
   // $eraserButton.unbind();
@@ -743,10 +766,15 @@ const handleGameEnd = function () {
   $canvas.css("background-color", "transparent");
   $canvasOverlay.hide();
   $selectedPrompt.text("Sketch & Guess");
+  $canvasOverlay.css({display: "none"})
 
   $endgameOptions.show(0);
   // centerElementInCanvas($endgameOptions);
   // $endgameOptions.css("top", ($canvasWrap.height() - $endgameOptions.height()) / 2);
+
+  if(isRedirect) {
+    window.location = 'https://www.mykanjo.com/members/parents-games/drawing-guessing';
+  }
 };
 
 $playAgainButton.click(() => {
@@ -786,6 +814,7 @@ const fetchNewPrompts = async function () {
 };
 
 const startNewRound = async function () {
+  console.log('....startNewRound....')
   drawingData.UTCDate = new Date().toISOString();
   updatePrompts();
   $prompts.show(0);

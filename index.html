@@ -48,7 +48,7 @@
         <span class="zerotime-number">0</span>
       </div>
       <h4>Time is up!</h4>
-      <p>Do you want to add 1 minute more?</p>
+      <p>Do you want to continue drawings?</p>
       <button id="continuePlay" type="button" class="endgame-option-primary">
         Yes!
       </button>
@@ -236,7 +236,7 @@
           </div>
        </div>
       </div>
-      <div id="canvas-overlay">
+      <div id="canvas-overlay" style="display: none">
         <div id="canvas-controls-container" style="display: none;">
           <div class="color-picker-item">
             <label></label>
@@ -274,17 +274,26 @@
             <span style="background-color: #E38ECC"></span>
           </div>
           <div class="color-picker-wrapper">
-            <label for="color-picker">
-              <input
-                type="color"
-                id="color-picker"
-                name="color-picker"
-                list="my-colors"
-              />
-              <div id="pencil-button-selected" class="pencil-button">
-                <img src="https://raw.githack.com/vadimmelnikov/game-files/main/images/pencil.png" alt="pencil"/>
+<!--            <label for="color-picker">-->
+<!--&lt;!&ndash;              <input&ndash;&gt;-->
+<!--&lt;!&ndash;                type="color"&ndash;&gt;-->
+<!--&lt;!&ndash;                id="color-picker"&ndash;&gt;-->
+<!--&lt;!&ndash;                name="color-picker"&ndash;&gt;-->
+<!--&lt;!&ndash;                list="my-colors"&ndash;&gt;-->
+<!--&lt;!&ndash;              />&ndash;&gt;-->
+<!--              <div id="pencil-button-selected" class="pencil-button">-->
+<!--                <img src="https://raw.githack.com/vadimmelnikov/game-files/main/images/pencil.png" alt="pencil"/>-->
+<!--              </div>-->
+<!--            </label>-->
+            <div id="pencil-button-selected" class="pencil-button">
+              <div id="colorpencil">
+                <svg viewBox="0 0 69 217" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path class="color-picker-path" d="M0 64C0 60.134 3.13401 57 7 57L62 57C65.866 57 69 60.134 69 64L69 202C69 210.284 62.2843 217 54 217L15 217C6.71573 217 0 210.284 0 202L0 64Z" fill="#000000"/>
+                  <path class="color-picker-path" d="M32.431 4.07306L20 26.345C29.1468 31.4176 40.2629 31.4173 49.4098 26.345L36.9781 4.073C35.9848 2.29335 33.4243 2.29338 32.431 4.07306Z" fill="#000000"/>
+                </svg>
               </div>
-            </label>
+              <img src="https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63c140cd8ac294013df83341_shades%20(1).webp" alt="pencil"/>
+            </div>
               <!-- <input type="color" id="color-picker" name="color-picker" /> -->
               <datalist id="my-colors">
                 <option>#000000</option>

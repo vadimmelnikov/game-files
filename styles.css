@@ -215,6 +215,14 @@ body {
 
 }
 
+#colorpencil svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
 .sett_col_img.playagain {
   background-color: #FF6745;
   background-image: url('https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63c0199a8a081749c714b7ed_play.svg');
@@ -628,7 +636,7 @@ body {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  height: auto;
+  /*height: auto;*/
 }
 
 #pencil-button-selected:hover {
@@ -645,7 +653,17 @@ body {
 }
 
 
-.pencil-button img, .eraser-button img {
+.pencil-button img {
+  /*width: 100%;*/
+  /*height: auto;*/
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.eraser-button img {
   width: 100%;
   height: auto;
 }
@@ -1697,7 +1715,21 @@ button:hover, #category-fieldset label:hover {
   }
 }
 
-@media only screen and (max-width: 760px) and (orientation: landscape) {
+@media screen and (max-width: 600px) {
+  .endgame-wrapper {
+    padding: 30px;
+    max-width: none;
+    width: 90%;
+  }
+  .defbutton {
+    margin-right: 10px;
+  }
+  .set_cols {
+    align-items: self-start;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (orientation: landscape) {
   .setting_cont {
     display: flex;
     flex-direction: row;
@@ -1716,5 +1748,15 @@ button:hover, #category-fieldset label:hover {
     padding: 0px;
     max-width: none;
     width: inherit;
+  }
+  #canvas-wrap {
+    align-items: baseline;
+  }
+  .gmactive #canvas-overlay {
+    width: 100% !important;
+    overflow: hidden;
+  }
+  #submit-countdown-container {
+    gap: 0;
   }
 }

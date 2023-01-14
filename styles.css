@@ -553,7 +553,7 @@ body {
   background-color: transparent;
   border: none;
   top: 24px;
-  transition: top 0.3s;
+  transition: all 0.3s;
 }
 
 #eraser-button-selected:hover {
@@ -623,24 +623,26 @@ body {
 #pencil-button {
   z-index: 1;
   position: relative;
-  top: 48px;
-  transition: top 0.3s;
+  top: 0px;
   background-color: transparent;
   border: none;
   cursor: pointer;
   height: auto;
+  transition: all 0.3s;
 }
 
 #pencil-button-selected {
-  top: 24px;
+  top: 38px;
   background-color: transparent;
   border: none;
   cursor: pointer;
   /*height: auto;*/
+  transition: all 0.2s;
 }
 
 #pencil-button-selected:hover {
   opacity: 0.85;
+  top: 28px;
 }
 
 .pencil-button {
@@ -1098,7 +1100,7 @@ button:hover, #category-fieldset label:hover {
 
   #pencil-button:hover {
     opacity: 0.85;
-    top: 10px;
+    top: -10px;
   }
 
 };

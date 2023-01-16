@@ -28,7 +28,7 @@
       src="https://api.memberstack.io/static/memberstack.js?webflow"
       data-memberstack-id="009ca39b58bd2515c6aac9248bb6c0cb"
     ></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.1/lottie.min.js"></script>
     <!--<script src="https://573d-193-117-169-106.eu.ngrok.io/webflowTestDomainVersions/script.js" defer></script>-->
     <title>Static Template</title>
   </head>
@@ -273,14 +273,23 @@
             <input type="radio" name="color-picker" value="#E38ECC" />
             <span style="background-color: #E38ECC"></span>
           </div>
+          <div class="color-picker-item">
+            <input
+                    id="color-picker-list"
+                    type="color"
+                    checked
+            />
+            <img id="openpicker" src="https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63c54c8cf8fb9da5255b9f35_color.png">
+          </div>
+
           <div class="color-picker-wrapper">
 <!--            <label for="color-picker">-->
-<!--&lt;!&ndash;              <input&ndash;&gt;-->
-<!--&lt;!&ndash;                type="color"&ndash;&gt;-->
-<!--&lt;!&ndash;                id="color-picker"&ndash;&gt;-->
-<!--&lt;!&ndash;                name="color-picker"&ndash;&gt;-->
-<!--&lt;!&ndash;                list="my-colors"&ndash;&gt;-->
-<!--&lt;!&ndash;              />&ndash;&gt;-->
+<!--              <input-->
+<!--                type="color"-->
+<!--                id="color-picker"-->
+<!--                name="color-picker"-->
+<!--                list="my-colors"-->
+<!--              />-->
 <!--              <div id="pencil-button-selected" class="pencil-button">-->
 <!--                <img src="https://raw.githack.com/vadimmelnikov/game-files/main/images/pencil.png" alt="pencil"/>-->
 <!--              </div>-->

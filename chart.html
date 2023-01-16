@@ -1,0 +1,181 @@
+<html>
+<head>
+<!--    <style>.wf-force-outline-none[tabindex="-1"]:focus {-->
+<!--        outline: none;-->
+<!--    }</style>-->
+    <meta charset="utf-8">
+    <title>Insights</title>
+    <meta content="Insights" property="og:title">
+    <meta content="Insights" property="twitter:title">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+<!--    <link href="https://uploads-ssl.webflow.com/6315d8bfcaf1234c30aa1942/css/kanjohealth.webflow.2a562b34e.css"-->
+<!--          rel="stylesheet" type="text/css">-->
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+    <link href="//db.onlinewebfonts.com/c/d24b5a782dbc3a1687aa97dc27a6bad5?family=Castledown+Discovery" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Noto+Sans:100,200,regular%7CNoto+Sans:100,200,300,regular,500,600"
+          media="all">
+    <script type="text/javascript">WebFont.load({google: {families: ["Noto Sans:100,200,regular", "Noto Sans:100,200,300,regular,500,600"]}});</script>
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"
+            type="text/javascript"></script><![endif]-->
+    <script type="text/javascript">!function (o, c) {
+        var n = c.documentElement, t = " w-mod-";
+        n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
+    }(window, document);</script>
+    <link href="https://uploads-ssl.webflow.com/6315d8bfcaf1234c30aa1942/632c3583fe47a24df375189a_favicon-32x32.png"
+          rel="shortcut icon" type="image/x-icon">
+    <link href="https://uploads-ssl.webflow.com/6315d8bfcaf1234c30aa1942/632c358825bd5fe85d8361c8_webclip-256x256.png"
+          rel="apple-touch-icon">
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-H0N0C1ZH72"></script>
+    <script type="text/javascript">window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-H0N0C1ZH72', {'anonymize_ip': false});</script><!-- Memberstack -->
+    <script src="https://api.memberstack.io/static/memberstack.js?webflow"
+            data-memberstack-id="009ca39b58bd2515c6aac9248bb6c0cb"></script>
+
+    <link rel="stylesheet" href="chart.css">
+
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Noto+Sans:100,200,regular%7CNoto+Sans:100,200,300,regular,500,600"
+          media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--    <link href="https://mykanjo-webapp-ornvt.mongodbstitch.com/kanjo-production-domain-files/insights-page-production-domain/styles.css"-->
+    <!--          rel="stylesheet">-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer=""></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer=""></script>
+    <script src="//cdn.amcharts.com/lib/4/core.js" defer=""></script>
+    <script src="//cdn.amcharts.com/lib/4/charts.js" defer=""></script>
+    <script src="//cdn.amcharts.com/lib/4/plugins/sunburst.js" defer=""></script>
+    <script src="//cdn.amcharts.com/lib/4/themes/animated.js" defer=""></script>
+    <!--    <script src="https://mykanjo-webapp-ornvt.mongodbstitch.com/kanjo-production-domain-files/insights-page-production-domain/script.js"-->
+    <!--            defer=""></script>-->
+    <script src="chart.js" defer=""></script>
+    <script charset="utf-8" src="https://api.memberstack.io/static/6.bf7acb6f7324ce381858.bundle.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.1/lottie.min.js" integrity="sha512-H6aKTjvYAazW0iNuGj1f2dZvSWlt1HGZGEDsXRPETo2IB4H6v36Vl2qiZNlCRxOp0kT7iBf+7USNPavNscZGAw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+</head>
+<body class="body-22">
+<div class="mcontainer">
+    <h1 class="abtx">Learn more about your child</h1>
+    <div id="side-bar" style="display: none;"></div>
+    <div class="embed-container wf-section">
+        <div class="w-embed">
+            <div id="player-dropdown" style="">
+                <ul id="dropdown-menu-options"></ul>
+            </div>
+
+            <div id="insights-container" style="">
+                <div class="insight-container">
+                    <div class="chart-container">
+                        <canvas id="chart-daily-activity"></canvas>
+                    </div>
+                    <p class="insight-description" style="min-height: 40px;">The more you play the more you learn. See
+                        how
+                        much your child is playing and learning here. Just like with physical exercise, to get the most
+                        out
+                        of Kanjo, we recommend playing regularly!<span>Details</span></p>
+                    <a href="">Learn More</a>
+                </div>
+                <div id="insights-grid">
+                    <div class="insight-container">
+                        <div class="chart-container">
+                            <canvas id="chart-excitement"></canvas>
+                        </div>
+                        <p class="insight-description" style="min-height: 40px;">Enthusiasm and energy varies during the
+                            day
+                            for all of us. Some tasks require quiet thoughtfulness, others feats of strength. Check out
+                            how
+                            it varies by time of day.<span>Details</span></p>
+                        <a href="">Learn More</a>
+                    </div>
+                    <div class="insight-container">
+                        <div class="chart-container">
+                            <canvas id="chart-planning"></canvas>
+                        </div>
+                        <p class="insight-description" style="min-height: 40px;">We all know that more complex tasks
+                            need
+                            more planning and strategy. However, some of us might find this easier while reflecting
+                            after
+                            lunch, others early in the morning. See how your child varies over the
+                            day.<span>Details</span></p>
+                        <a href="">Learn More</a>
+                    </div>
+                    <div class="insight-container">
+                        <div class="chart-container">
+                            <canvas id="chart-decisiveness"></canvas>
+                        </div>
+                        <p class="insight-description" style="min-height: 40px;">During sports, exams, or group tasks -
+                            decisiveness can be key to success. Night owls may find clarity in the evenings, whereas
+                            early
+                            birds at sunrise.
+                            <span>Details</span>
+                        </p>
+                        <a href="">Learn More</a>
+                    </div>
+                </div>
+
+                <div id="sunburst-insight-container" class="insight-container">
+                    <p id="sunburst-title">Emotional Vocabulary</p>
+                    <p class="insight-description" style="min-height: 40px;">Being able to express youreself is crucial
+                        -
+                        our emotions wheel shows the emotional vocabulary your child has both understood and wants to
+                        express.<span>Details</span></p>
+                    <div id="sunburst-chart-container">
+                        <div style="width: 100%; height: 100%; position: relative;"></div>
+                    </div>
+
+                    <a href="">Learn More</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6315d8bfcaf1234c30aa1942"
+        type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+        crossorigin="anonymous"></script>
+<!--<script src="https://uploads-ssl.webflow.com/6315d8bfcaf1234c30aa1942/js/webflow.750d8d300.js"-->
+<!--        type="text/javascript"></script>-->
+<!--[if lte IE 9]>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script>--><![endif]-->
+<script>
+    window.addEventListener('DOMContentLoaded', async function () {
+
+        const membershipInfo = await MemberStack.onReady;
+
+        if (membershipInfo.loggedIn && membershipInfo["mongo-account-created"] !== "created") {
+            const userInfo = {
+                memberstackID: membershipInfo["id"]
+            };
+            $.ajax({
+                type: "PUT",
+                url: "https://kanjo-web-app.herokuapp.com/users",
+                data: JSON.stringify(userInfo),
+                contentType: "application/json",
+                statusCode: {
+                    201: function () {
+                        membershipInfo.updateProfile({
+                            "mongo-account-created": "created"
+                        }, false)
+                    },
+                    204: function () {
+                        membershipInfo.updateProfile({
+                            "mongo-account-created": "created"
+                        }, false)
+                    }
+                }
+            });
+        }
+        ;
+    });
+</script>
+</body>
+</html>

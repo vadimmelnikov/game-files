@@ -6,7 +6,7 @@
 // Marina profile ID
 // var userId = "6399ab9269253100049eef34";
 
-localStorage.setItem('memberstack', '{"spEditor":false,"defaultMembership":"6317441a067d830004f55397","colorCode":"2aa8ff","loginPage":"","allow_signup":false,"protected":[{"id":"basic-members","redirect":"login","urls":[{"url":"members","filter":"Starts"}],"access":true,"hide_links":false}],"hasRecaptchaV2":false,"hasRecaptchaV3":false,"redirectOverride":"","membership":{"id":"6317441a067d830004f55397","amount":"","status":"active","cancel_at_period_end":false,"name":"Basic","signupDate":"2022-12-20T11:31:49.000Z"},"information":{"first-name":"asd","last-name":"asd","newsletter-optin":true,"mongo-account-created":"created","webflow-member-id":"63a19d2898291283b1ff95c6","id":"63a19d2572cfbb0004c242be"},"testWarning":false,"email":"asd@asd.asd","hash":"335aa658ffac131409175951f1fd4218cdffd27038d5a5c765186b50d4ed807a","redirect":"members/dashboard","client_secret":"","requires_payment":false,"loginRedirect":"members/dashboard","logoutRedirect":"logout","uniqueContent":"","canceled":false}')
+// localStorage.setItem('memberstack', '{"spEditor":false,"defaultMembership":"6317441a067d830004f55397","colorCode":"2aa8ff","loginPage":"","allow_signup":false,"protected":[{"id":"basic-members","redirect":"login","urls":[{"url":"members","filter":"Starts"}],"access":true,"hide_links":false}],"hasRecaptchaV2":false,"hasRecaptchaV3":false,"redirectOverride":"","membership":{"id":"6317441a067d830004f55397","amount":"","status":"active","cancel_at_period_end":false,"name":"Basic","signupDate":"2022-12-20T11:31:49.000Z"},"information":{"first-name":"asd","last-name":"asd","newsletter-optin":true,"mongo-account-created":"created","webflow-member-id":"63a19d2898291283b1ff95c6","id":"63a19d2572cfbb0004c242be"},"testWarning":false,"email":"asd@asd.asd","hash":"335aa658ffac131409175951f1fd4218cdffd27038d5a5c765186b50d4ed807a","redirect":"members/dashboard","client_secret":"","requires_payment":false,"loginRedirect":"members/dashboard","logoutRedirect":"logout","uniqueContent":"","canceled":false}')
 
 var memberstackLocal = localStorage.getItem('memberstack');
 if(!memberstackLocal) {
@@ -34,27 +34,61 @@ $(window).on("resize.custom1", function () {
   });
 
   const playerCardGenerator = function (name, avatar, playerID) {
-    const jpgStrArr = [
-      "634548b9ae4c28d270dc4e8b_avatar_01_pineapple",
-      "634548b9235565840ef0b0da_avatar_02_rabbit",
-      "634548b9ab5f9d591adb4650_avatar_03_house",
-      "634545e58f4ce3058b5c97b4_avatar_04_circle",
-      "634548dfab5f9d2d7edb4a21_avatar_05_apple",
-      "634545a66c9af3616cf9a595_avatar_06_square",
-      "634548ba0f64bcf6af4683fb_avatar_07_cat",
-      "634548bb0565145a3fd769ca_avatar_08_melon",
-      "634545a61033b34d1f7edc06_avatar_09_triangle",
-      "635bb4231f3d76829fb9ba0c_avatar_00_guest"
-    ];
-    const avatarSlug = "\\d_" + avatar + "$";
-    const matchedStr = jpgStrArr.find((str) => {
-      const regex = new RegExp(avatarSlug, "g");
-      return str.match(regex) !== null;
-    });
+    // const jpgStrArr = [
+    //   "634548b9ae4c28d270dc4e8b_avatar_01_pineapple",
+    //   "634548b9235565840ef0b0da_avatar_02_rabbit",
+    //   "634548b9ab5f9d591adb4650_avatar_03_house",
+    //   "634545e58f4ce3058b5c97b4_avatar_04_circle",
+    //   "634548dfab5f9d2d7edb4a21_avatar_05_apple",
+    //   "634545a66c9af3616cf9a595_avatar_06_square",
+    //   "634548ba0f64bcf6af4683fb_avatar_07_cat",
+    //   "634548bb0565145a3fd769ca_avatar_08_melon",
+    //   "634545a61033b34d1f7edc06_avatar_09_triangle",
+    //   "635bb4231f3d76829fb9ba0c_avatar_00_guest"
+    // ];
+    // const avatarSlug = "\\d_" + avatar + "$";
+    // const matchedStr = jpgStrArr.find((str) => {
+    //   const regex = new RegExp(avatarSlug, "g");
+    //   return str.match(regex) !== null;
+    // });
+
+    let avatarSrc = '';
+    if (avatar === 'guest') {
+      avatarSrc = 'https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63c51697a9b6a0691084908b_guest-norm.png';
+    };
+
+    if(avatar === 'pineapple') {
+      avatarSrc = 'https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63bfcfa236a47c02d5e7bdc2_Konjo_6_Yellow_orange_bake.json';
+    } else if(avatar === 'rabbit') {
+      avatarSrc = 'https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63bfcfa2e38261a8839209a9_Konjo_3_Green_bake.json';
+    }else if(avatar === 'house') {
+      avatarSrc = 'https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63bfcfa1ccb1e1320b34ee7f_Konjo_1_Purplesmile_bake.json';
+    }else if(avatar === 'circle') {
+      avatarSrc = 'https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63bfcfa26cd7cb745d745573_Konjo_7_Robot_bake.json';
+    }else if(avatar === 'apple') {
+      avatarSrc = 'https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63bfcfa236a47c02d5e7bdc2_Konjo_6_Yellow_orange_bake.json';
+    }else if(avatar === 'square') {
+      avatarSrc = 'https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63bfcfa2e3826121349209a8_Konjo_5_Yellow_bake.json';
+    }else if(avatar === 'cat') {
+      avatarSrc = 'https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63bfcfa2e38261eb289209ab_Konjo_9_Owl_bake.json';
+    }else if(avatar === 'melon') {
+      avatarSrc = 'https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63bfcfa2335f3837cbdeba09_Konjo_4_Ninja_bake.json';
+    }else if(avatar === 'triangle') {
+      avatarSrc = 'https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63bfcfa294906e9c5cfbf74c_Konjo_8_Pink_bake.json';
+    }
+
     const firstName = name.match(/\w+/g)[0];
+
+    let image = '';
+    if(avatar === 'guest') {
+      image = `<img class="avatarimg" src="${avatarSrc}">`
+    } else {
+      image = `<div class="player-button-avatar" data-src=${avatarSrc}></div>`
+    }
+
     const $playerCard = $(
         `<button class="player-card">
-        <img class="player-card-avatar" src='https://uploads-ssl.webflow.com/6315d8bfcaf1234c30aa1942/${matchedStr}.jpg'>
+       ${image}
         <p class="player-card-name">${firstName}</p>
       </button>`
     );
@@ -84,6 +118,16 @@ $(window).on("resize.custom1", function () {
   setTimeout(() => {
     $pregameCard.show(0);
     centerElementInCanvas($pregameCard);
+    for(let i=0;i<$('.player-button-avatar').length;i++) {
+      lottie.loadAnimation({
+        container: document.getElementsByClassName('player-button-avatar')[i],
+        render: 'svg',
+        loop: false,
+        autoplay: true,
+        path:  document.getElementsByClassName('player-button-avatar')[i].getAttribute('data-src'),
+        name: i
+      })
+    }
   }, 1000);
 })();
 
@@ -157,6 +201,7 @@ const $eraserImage = $("#eraser-image");
 // const $pencilSVG = $("#pencil-svg");
 const $penColor = $(".color-pen");
 const $colorPicker = $("#color-picker");
+const $colorPickerList = $("#color-picker-list");
 const $submitCountdownContainer = $("#submit-countdown-container");
 // const $countdownContainer = $("#countdown");
 const $countdownStroke = $(".cls-1");
@@ -558,6 +603,17 @@ if (
   });
 }
 
+$('#openpicker').click(()=>{
+  $colorPickerList.click()
+})
+
+$colorPickerList.change(function () {
+  context.strokeStyle = $colorPickerList.val();
+  // console.log("current color:", context.strokeStyle);
+  $penColor.css("fill", $colorPickerList.val());
+  $('.color-picker-path').attr('fill', context.strokeStyle);
+});
+
 // Event handler for changing stroke color using color picker
 $colorPicker.change(function () {
   context.strokeStyle = $colorPicker.val();
@@ -657,7 +713,6 @@ $promptButtons.click(function () {
   $prompts.hide(0);
   $skipButton.hide(0);
   $selectedPrompt.html($(this).html());
-  console.log('($(this)', $(this));
   $canvas.css("background-color", "#fff");
   $canvasOverlay.css({display: "flex"})
   $countdown.css({display: 'flex'});
@@ -732,6 +787,7 @@ const handleGameEnd = function (isRedirect = false) {
   $.ajax({
     type: "POST",
     url: "https://kanjo-web-app.herokuapp.com/drawings",
+    // url: "https://kanjo-testing-server.herokuapp.com/drawings",
     // url: "http://127.0.0.1:3000/drawings",
     data: JSON.stringify(drawingData),
     contentType: "application/json"

@@ -704,6 +704,11 @@ body {
   width: 0;
   /* overflow: auto; */
 }
+#color-picker-list{
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
 
 .color-picker-wrapper {
   margin-left: 32px;
@@ -713,6 +718,17 @@ body {
 .color-picker-item {
   margin-right: 14px;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.avatarimg {
+  width: 128px;
+  height: 132.5px;
+}
+#openpicker{
+  width: 27px;
+  height: 27px;
 }
 
 .color-picker-item label{

@@ -1,8 +1,5 @@
 @font-face {font-family: "Castledown Trial"; src: url("https://db.onlinewebfonts.com/t/d24b5a782dbc3a1687aa97dc27a6bad5.eot"); src: url("https://db.onlinewebfonts.com/t/d24b5a782dbc3a1687aa97dc27a6bad5.eot?#iefix") format("embedded-opentype"), url("https://db.onlinewebfonts.com/t/d24b5a782dbc3a1687aa97dc27a6bad5.woff2") format("woff2"), url("https://db.onlinewebfonts.com/t/d24b5a782dbc3a1687aa97dc27a6bad5.woff") format("woff"), url("https://db.onlinewebfonts.com/t/d24b5a782dbc3a1687aa97dc27a6bad5.ttf") format("truetype"), url("https://db.onlinewebfonts.com/t/d24b5a782dbc3a1687aa97dc27a6bad5.svg#Castledown Discovery") format("svg"); }
 
-body{
-    background: #F1EDE8;
-}
 .avatarimg {
     width: 34px;
     height: 34px;
@@ -2915,6 +2912,7 @@ body{
     flex-direction: column;
     align-items: center;
     gap: 32px;
+    background: #F1EDE8;
 }
 
 .abtx {

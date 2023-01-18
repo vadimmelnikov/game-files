@@ -6,6 +6,20 @@
 // All code contained within the below block will only fire once document has been parsed and all scripts with defer attribute have finished have evaluating
 window.addEventListener('DOMContentLoaded', async function() {
 
+    localStorage.setItem('memberstack', '{"spEditor":false,"defaultMembership":"6317441a067d830004f55397","colorCode":"2aa8ff","loginPage":"","allow_signup":false,"protected":[{"id":"basic-members","redirect":"login","urls":[{"url":"members","filter":"Starts"}],"access":true,"hide_links":false}],"hasRecaptchaV2":false,"hasRecaptchaV3":false,"redirectOverride":"","membership":{"id":"6317441a067d830004f55397","amount":"","status":"active","cancel_at_period_end":false,"name":"Basic","signupDate":"2022-12-14T10:55:14.000Z"},"information":{"first-name":"Marina","last-name":"Romanova","newsletter-optin":false,"webflow-member-id":"6399ab9545bd049fdddbc676","mongo-account-created":"created","id":"6399ab9269253100049eef34"},"testWarning":false,"email":"marigoroma@gmail.com","hash":"02c026758ee975877aa142f4c839b4cfefe8e4491beb0e5b9a948ef9d60120ef","redirect":"members/dashboard","client_secret":"","requires_payment":false,"loginRedirect":"members/dashboard","logoutRedirect":"logout","uniqueContent":"","canceled":false}')
+
+    var memberstackLocal = localStorage.getItem('memberstack');
+    if(!memberstackLocal) {
+        window.location.href = 'https://new-3d33ad.webflow.io/login'
+    }
+
+    var userInfo = JSON.parse(memberstackLocal);
+    var userId = userInfo.information.id;
+    //
+    // const userInfo = {
+    //     memberstackID: membershipInfo["id"]
+    // };
+
     // TODO - dates need to be reformatted in the resize event listener
     // Helper function which takes the UTC datetime of a drawing and shifts it so that it is set to the player's local time when they created the drawing
     function UTCToLocalTimeString(drawingDate, drawingTimeOffset) {
@@ -31,11 +45,11 @@ window.addEventListener('DOMContentLoaded', async function() {
     };
 
     // Wait for the memberstack information to load and extract the user's memberstackID
-    const membershipInfo = await MemberStack.onReady;
-    const userInfo = {
-        // webflowID: membershipInfo["webflow-member-id"],
-        memberstackID: membershipInfo["id"]
-    };
+    // const membershipInfo = await MemberStack.onReady;
+    // const userInfo = {
+    //     // webflowID: membershipInfo["webflow-member-id"],
+    //     memberstackID: membershipInfo["id"]
+    // };
 
     const $drawingsContainer = $("#drawings-container");
     const $spinnerContainer = $("#spinner-container");
@@ -62,15 +76,17 @@ window.addEventListener('DOMContentLoaded', async function() {
         position: 'absolute', // Element positioning
     };
     const target = $spinnerContainer[0];
-    new Spin.Spinner(spinnerOptions).spin(target);
+    // new Spin.Spinner(spinnerOptions).spin(target);
 
     // Get drawings and reverse the array so that they're in reverse chronological order (most recent first)
-    const drawingsArray = await $.ajax({
+    const drawingsArrays = await $.ajax({
         type: "GET",
-        url: `https://kanjo-web-app.herokuapp.com/users/${userInfo.memberstackID}/drawings`
+        url: `https://kanjo-web-app.herokuapp.com/users/${userId}/drawings`
     });
-    drawingsArray.reverse();
+    console.log('drawingsArray', drawingsArrays)
 
+    const drawingsArray = drawingsArrays.filter((item) => item.drawingGuessID === null).reverse();
+    console.log('drawingsArray', drawingsArray)
     // Remove spinner
     $spinnerContainer.remove();
 
@@ -105,29 +121,70 @@ window.addEventListener('DOMContentLoaded', async function() {
         // Terminate callback function if the strokeData is empty
         if (drawing.strokeData.length === 0) return;
         // Create and format drawing card
-        const $guessCard = $(`<div id="container-${drawingIndex}" class="guess-card"></div>`);
+        // const $guessCard = $(`<div id="container-${drawingIndex}" class="guess-card"></div>`);
+        const $guessCard = $(`<div id="container-${drawingIndex}" class="draw-ch_wrapper"></div>`);
+        const $drawChBlock = $(`<div class="draw-ch_slide-block"></div>`);
+        $guessCard.append($drawChBlock);
 
         // Create and append name and dates to drawing card
-        const $nameAndDateContainer = $(`<div class="name-and-date-container"></div>`);
         const nameText = drawing.playerID.name === null ? "Guest" : drawing.playerID.name.match(/\w+/g)[0];
         const dateText = UTCToLocalTimeString(new Date(drawing.UTCDate), drawing.userUTCOffset);
-        $guessCard.append($nameAndDateContainer);
-        $nameAndDateContainer.append(`<p>${nameText}</p>`).append($(`<p>${dateText}</p>`))
+        // const $nameAndDateContainer = $(`<!--<div class="name-and-date-container"></div>-->`);
+        const $nameAndDateContainer = $(`<div class="draw-ch_top">
+                            <div class="draw-ch_img-wrap">
+                                <div class="new-player_select-lottie" data-w-id="c57a3bd2-fcf7-3c6e-e6b3-8dcf2860210a"
+                                     data-animation-type="lottie"
+                                     data-src="https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63bfcfa1bd9b3282a0dbdb36_Konjo_2_Glasses_bake.json"
+                                     data-loop="0" data-direction="1" data-autoplay="1" data-is-ix2-target="0"
+                                     data-renderer="svg" data-duration="0">
+                                </div>
+                            </div>
+                            <div class="deaw-ch_top-para">
+                                <div class="par-dash-txt-16-21">${nameText}</div>
+                                <div class="par-dash-txt-16-21 op-6">3 hours ago</div>
+                            </div>
+                        </div>`);
+
+
+
+        // const nameText = drawing.playerID.name === null ? "Guest" : drawing.playerID.name.match(/\w+/g)[0];
+        // const dateText = UTCToLocalTimeString(new Date(drawing.UTCDate), drawing.userUTCOffset);
+        $drawChBlock.append($nameAndDateContainer);
+        // $nameAndDateContainer.append(`<p>${nameText}</p>`).append($(`<p>${dateText}</p>`))
 
         // Create and append canvas and prompt buttons. Add data attributes to canvas for future reference
-        const $canvasContainer = $(`<div class="canvas-container"></div>`)
-        const $newCanvas = $(`<canvas id="canvas-${drawingIndex}" class="canvas" data-original-width="${drawing.canvasSize.width}" data-original-height="${drawing.canvasSize.height}" data-scale-factor="" data-guessed=""></canvas>`);
+        // const $canvasContainer = $(`<div class="canvas-container"></div>`);
+        const $canvasContainer = $(`<div class="canv-block w-embed"></div>`);
+
+
+        // const $newCanvas = $(`<canvas id="canvas-${drawingIndex}" class="canvas" data-original-width="${drawing.canvasSize.width}" data-original-height="${drawing.canvasSize.height}" data-scale-factor="" data-guessed=""></canvas>`);
+        const $newCanvas = $(`<canvas id="canvas-${drawingIndex}" class="draw-canv" data-original-width="${drawing.canvasSize.width}" data-original-height="${drawing.canvasSize.height}" data-scale-factor="" data-guessed=""></canvas>`);
         $canvasContainer.append($newCanvas);
-        const $promptsContainer = $(`<div id="prompt-container-${drawingIndex}" class="prompt-container"></div>`);
+
+        // const $promptsContainer = $(`<div id="prompt-container-${drawingIndex}" class="prompt-container"></div>`);
+        const $promptsContainer = $(`<div id="prompt-container-${drawingIndex}" class="draw-ch_slide_bttm"></div>`);
+
         const { selectedPrompt } = drawing;
         const promptOptions = [selectedPrompt.option_1, selectedPrompt.option_2, selectedPrompt.option_3];
         const selectedPromptOption = drawing.promptData[drawing.promptData.length - 1].selectedPrompt;
         promptOptions.forEach((prompt, promptIndex) => {
             const letter = "abc"[promptIndex];
-            const $button = $(`<button class="prompt-button-${drawingIndex} prompt-button">${letter}. ${prompt}</button>`);
+            // const $button = $(`<button class="prompt-button-${drawingIndex} prompt-button">${letter}. ${prompt}</button>`);
+
+            const $button = $(`<div class="prompt-button-${drawingIndex} draw-ch_item">
+                                <div class="draw-ch_item_left">
+                                    <div class="draw-ch_numb">
+                                        <div class="draw-ch_txt">${letter}</div>
+                                    </div>
+                                    <div class="txt-20-26">${prompt}</div>
+                                </div>
+                                <div class="draw-success-img"></div>
+                            </div>`);
+
+
             $promptsContainer.append($button);
         });
-        $guessCard.append($canvasContainer).append($promptsContainer);
+        $drawChBlock.append($canvasContainer).append($promptsContainer);
         $drawingsContainer.append($guessCard);
 
         // Save reference to the prompt buttons, and reference to the correct prompt button
@@ -138,6 +195,8 @@ window.addEventListener('DOMContentLoaded', async function() {
         //   return index + 1 === parseInt(selectedPromptOption.match(/\d/g)[0]);
         // });
 
+        console.log("$newCanvas[0]", $newCanvas[0])
+        console.log("$newCanvas[0].dataset.scaleFactor", $newCanvas[0].dataset)
         // Get canvas drawing context
         const context = $newCanvas[0].getContext("2d");
 
@@ -168,8 +227,7 @@ window.addEventListener('DOMContentLoaded', async function() {
 
             // Create, add, and position game start button
             const $playButton = $(`<button class="play-button">
-                                <img src='https://uploads-ssl.webflow.com/633ada5bbb1872aa840e5386/635a5f48a34410d549905234_Group%20138playbutton.png'>
-                              </img>
+                                <img src='https://uploads-ssl.webflow.com/633ada5bbb1872aa840e5386/635a5f48a34410d549905234_Group%20138playbutton.png' />
                             </button>`).css({width: $canvasContainer.width()/3, height: "auto"});
             $canvasContainer.append($playButton);
             $playButton.css({ left: ($canvasContainer.width() - $playButton.width()) / 2, top: ($canvasContainer.height() - $playButton.width()) / 2 });
@@ -185,7 +243,7 @@ window.addEventListener('DOMContentLoaded', async function() {
 
             // Initiate game upon pressing the game start button
             $playButton.click(() => {
-
+                console.log('..$playButton...')
                 // Update guessed status data attribute and remove game start button
                 $newCanvas[0].dataset.guessed = "true"
                 $playButton.fadeOut(300);

@@ -115,20 +115,43 @@ $(window).on("resize.custom1", function () {
     }
   });
   // A decent delay is needed here as the position must be calculated after the images have loaded - an alternative could be to put an avatar or player card min-height in css?
-  setTimeout(() => {
-    $pregameCard.show(0);
-    centerElementInCanvas($pregameCard);
-    for(let i=0;i<$('.player-button-avatar').length;i++) {
-      lottie.loadAnimation({
-        container: document.getElementsByClassName('player-button-avatar')[i],
-        render: 'svg',
-        loop: false,
-        autoplay: true,
-        path:  document.getElementsByClassName('player-button-avatar')[i].getAttribute('data-src'),
-        name: i
-      })
-    }
-  }, 1000);
+  let x =[];
+  // setTimeout(() => {
+  //   $pregameCard.show(0);
+  //   centerElementInCanvas($pregameCard);
+  //   for(let i=0;i<$('.player-button-avatar').length;i++) {
+  //     const f = Math.floor(Math.random()*9999);
+  //     const t = lottie.loadAnimation({
+  //       container: document.getElementsByClassName('player-button-avatar')[i],
+  //       render: 'svg',
+  //       loop: false,
+  //       autoplay: true,
+  //       path:  document.getElementsByClassName('player-button-avatar')[i].getAttribute('data-src'),
+  //       name: f
+  //     })
+  //     x.push({
+  //       name: f,
+  //       l: t
+  //     })
+  //   }
+  // }, 1000);
+  // const avatarsLoad = document.getElementsByClassName('player-button-avatar');
+  $pregameCard.show(0);
+  centerElementInCanvas($pregameCard);
+
+  for(let i=0; i<$('.player-button-avatar').length; i++) {
+    let animationSkipForward = lottie.loadAnimation({
+      container: document.getElementsByClassName('player-button-avatar')[i],
+      renderer: 'svg',
+      loop: false,
+      autoplay: false,
+      path: document.getElementsByClassName('player-button-avatar')[i].getAttribute('data-src')
+    });
+
+    document.getElementsByClassName('player-button-avatar')[i].addEventListener('mouseenter', function () {
+      animationSkipForward.playSegments([0, 60], true);
+    });
+  }
 })();
 
 const centerElementInCanvas = function (jqueryElement) {
@@ -901,6 +924,37 @@ const startNewRound = async function () {
   }, 0);
   resetStrokeParameters();
 };
+
+$(document).ready(()=>{
+  // const avatarsLoad = document.getElementsByClassName('player-button-avatar');
+  // console.log(avatarsLoad);
+  // addEventListener('mouseover', (event) => {});
+  // $(".player-button-avatar").mouseover(()=>{
+  //   console.log('......')
+  //   lottie.loadAnimation({
+  //     container: $(this),
+  //     render: 'svg',
+  //     loop: false,
+  //     autoplay: true,
+  //     path:  $(this).attr('data-src'),
+  //   })
+  // })
+
+  /* Play an animation on each click */
+  // let iconSkipForward = document.querySelector('.bodymovinanim');
+  //
+  // let animationSkipForward = lottie.loadAnimation({
+  //   container: iconSkipForward,
+  //   renderer: 'svg',
+  //   loop: false,
+  //   autoplay: false,
+  //   path: "https://raw.githubusercontent.com/thesvbd/Lottie-examples/master/assets/animations/skip-forward.json"
+  // });
+  //
+  // iconSkipForward.addEventListener('click', function() {
+  //   animationSkipForward.playSegments([0,60], true);
+  // });
+})
 
 
 

@@ -1270,6 +1270,11 @@ $(document).ready(async function () {
 
             sunburstDatasets.push([
                 {
+                    font: {
+                        family: "Castledown Trial",
+                        size: 200,
+                        weight: 900,
+                    },
                     name: "Angry",
                     value: 100,
                     color: am4core.color(getRGBAForSegment("Angry", playerEmotionsCount?.["Angry"])),
@@ -1747,6 +1752,7 @@ $(document).ready(async function () {
         };
 
         sunburstChart = am4core.create("sunburst-chart-container", am4plugins_sunburst.Sunburst);
+        sunburstChart.fontFamily = 'Castledown Trial';
 
         // sunburstChart.radius = am4core.percent(95);
         sunburstChart.radius = am4core.percent(100);

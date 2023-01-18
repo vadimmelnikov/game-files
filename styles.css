@@ -447,6 +447,7 @@ body {
   display: block;
   padding: 0;
   width: 100%;
+  border-radius: 40px;
 }
 
 #canvas-overlay {
@@ -1780,4 +1781,8 @@ button:hover, #category-fieldset label:hover {
   #submit-countdown-container {
     gap: 0;
   }
+}
+.player-button-avatar{
+  width: 128px;
+  height: 132.5px;
 }

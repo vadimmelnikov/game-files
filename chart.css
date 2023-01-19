@@ -3123,6 +3123,7 @@
     gap: 15px;
     background: #FFFFFF;
     border-radius: 45px;
+    margin-bottom: 30px;
 }
 
 .insight-description {
@@ -3229,7 +3230,7 @@
 }
 
 .player-button {
-    /*width: 100%;*/
+    width: 130px;
     height: 60px;
     cursor: pointer;
     display: flex;
@@ -3237,7 +3238,6 @@
     align-items: center;
     /*border-radius: 60px;*/
     gap: 15px;
-    padding-left: 10px;
     background-color: transparent;
     animation: fade-in 0.4s;
     transition: opacity 0.3s, outline-color 0.3s;
@@ -3247,7 +3247,9 @@
     border-radius: 20px;
     padding: 8px 12px;
 }
-
+.mcontainer{
+    background: #f1ede7;
+}
 @keyframes fade-in {
     0% {
         opacity: 0;

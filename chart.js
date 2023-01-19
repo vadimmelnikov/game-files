@@ -415,7 +415,7 @@ $(document).ready(async function () {
                     ctx.textAlign = 'center';
                     ctx.fillStyle = "rgba(0, 0, 0, 1)";
                     ctx.textBaseline = 'bottom';
-                    ctx.font = "normal 12px Castledown Trial";
+                    ctx.font = "normal 12px Castledown";
 
                     // Loop through each data in the datasets
 
@@ -439,7 +439,7 @@ $(document).ready(async function () {
                     color: '#000000',
                     align: 'start',
                     font: {
-                        family: "Castledown Trial",
+                        family: "Castledown",
                         size: 32,
                         weight: 900,
                     },
@@ -742,7 +742,7 @@ $(document).ready(async function () {
                     color: '#000000',
                     align: 'start',
                     font: {
-                        family: "Castledown Trial",
+                        family: "Castledown",
                         size: 32,
                         weight: 900,
                     }
@@ -925,7 +925,7 @@ $(document).ready(async function () {
                     color: '#000000',
                     align: 'start',
                     font: {
-                        family: "Castledown Trial",
+                        family: "Castledown",
                         size: 32,
                         weight: 900,
                     }
@@ -1131,7 +1131,7 @@ $(document).ready(async function () {
                     color: '#000000',
                     align: 'start',
                     font: {
-                        family: "Castledown Trial",
+                        family: "Castledown",
                         size: 32,
                         weight: 900,
                     }
@@ -1271,7 +1271,7 @@ $(document).ready(async function () {
             sunburstDatasets.push([
                 {
                     font: {
-                        family: "Castledown Trial",
+                        family: "Castledown",
                         size: 200,
                         weight: 900,
                     },
@@ -1752,7 +1752,7 @@ $(document).ready(async function () {
         };
 
         sunburstChart = am4core.create("sunburst-chart-container", am4plugins_sunburst.Sunburst);
-        sunburstChart.fontFamily = 'Castledown Trial';
+        sunburstChart.fontFamily = 'Castledown';
 
         // sunburstChart.radius = am4core.percent(95);
         sunburstChart.radius = am4core.percent(100);

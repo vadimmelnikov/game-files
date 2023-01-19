@@ -426,7 +426,7 @@ $(document).ready(async function () {
                             var data = dataset.data[index];
                             ctx.fillStyle = bar.options.backgroundColor;
                             if(data != 0) {
-                                ctx.fillText(data.toFixed(2), bar.x, bar.y - 5);
+                                ctx.fillText(parseInt(data), bar.x, bar.y - 5);
                             }
                         });
                     });
@@ -710,31 +710,31 @@ $(document).ready(async function () {
         type: 'bar',
         data: data_3,
         options: {
-            animation: {
-                duration: 1000,
-                onComplete: function () {
-                    var chartInstance = this,
-                        ctx = chartInstance.ctx;
-                    ctx.textAlign = 'center';
-                    ctx.fillStyle = "rgba(0, 0, 0, 1)";
-                    ctx.textBaseline = 'bottom';
-                    ctx.font = "normal 12px Castledown Trial";
-
-                    // Loop through each data in the datasets
-
-                    this.data.datasets.forEach(function (dataset, i) {
-                        var meta = chartInstance.getDatasetMeta(i);
-
-                        meta.data.forEach(function (bar, index) {
-                            var data = dataset.data[index];
-                            ctx.fillStyle = bar.options.backgroundColor;
-                            if(data != 0) {
-                                ctx.fillText(data.toFixed(2), bar.x, bar.y - 5);
-                            }
-                        });
-                    });
-                }
-            },
+            // animation: {
+            //     duration: 1000,
+            //     onComplete: function () {
+            //         var chartInstance = this,
+            //             ctx = chartInstance.ctx;
+            //         ctx.textAlign = 'center';
+            //         ctx.fillStyle = "rgba(0, 0, 0, 1)";
+            //         ctx.textBaseline = 'bottom';
+            //         ctx.font = "normal 12px Castledown Trial";
+            //
+            //         // Loop through each data in the datasets
+            //
+            //         this.data.datasets.forEach(function (dataset, i) {
+            //             var meta = chartInstance.getDatasetMeta(i);
+            //
+            //             meta.data.forEach(function (bar, index) {
+            //                 var data = dataset.data[index];
+            //                 ctx.fillStyle = bar.options.backgroundColor;
+            //                 if(data != 0) {
+            //                     ctx.fillText(data.toFixed(2), bar.x, bar.y - 5);
+            //                 }
+            //             });
+            //         });
+            //     }
+            // },
             plugins: {
                 title: {
                     display: true,
@@ -894,30 +894,30 @@ $(document).ready(async function () {
         type: 'bar',
         data: data_4,
         options: {
-            animation: {
-                duration: 1000,
-                onComplete: function () {
-                    var chartInstance = this,
-                        ctx = chartInstance.ctx;
-                    ctx.textAlign = 'center';
-                    ctx.fillStyle = "rgba(0, 0, 0, 1)";
-                    ctx.textBaseline = 'bottom';
-                    ctx.font = "normal 12px Castledown Trial";
-
-                    // Loop through each data in the datasets
-
-                    this.data.datasets.forEach(function (dataset, i) {
-                        var meta = chartInstance.getDatasetMeta(i);
-                        meta.data.forEach(function (bar, index) {
-                            var data = dataset.data[index];
-                            ctx.fillStyle = bar.options.backgroundColor;
-                            if(data != 0) {
-                                ctx.fillText(data.toFixed(2), bar.x, bar.y - 5);
-                            }
-                        });
-                    });
-                }
-            },
+            // animation: {
+            //     duration: 1000,
+            //     onComplete: function () {
+            //         var chartInstance = this,
+            //             ctx = chartInstance.ctx;
+            //         ctx.textAlign = 'center';
+            //         ctx.fillStyle = "rgba(0, 0, 0, 1)";
+            //         ctx.textBaseline = 'bottom';
+            //         ctx.font = "normal 12px Castledown Trial";
+            //
+            //         // Loop through each data in the datasets
+            //
+            //         this.data.datasets.forEach(function (dataset, i) {
+            //             var meta = chartInstance.getDatasetMeta(i);
+            //             meta.data.forEach(function (bar, index) {
+            //                 var data = dataset.data[index];
+            //                 ctx.fillStyle = bar.options.backgroundColor;
+            //                 if(data != 0) {
+            //                     ctx.fillText(data.toFixed(2), bar.x, bar.y - 5);
+            //                 }
+            //             });
+            //         });
+            //     }
+            // },
             plugins: {
                 title: {
                     display: true,
@@ -1100,30 +1100,30 @@ $(document).ready(async function () {
         type: 'bar',
         data: data_5,
         options: {
-            animation: {
-                duration: 1000,
-                onComplete: function () {
-                    var chartInstance = this,
-                        ctx = chartInstance.ctx;
-                    ctx.textAlign = 'center';
-                    ctx.fillStyle = "rgba(0, 0, 0, 1)";
-                    ctx.textBaseline = 'bottom';
-                    ctx.font = "normal 12px Castledown Trial";
-
-                    // Loop through each data in the datasets
-
-                    this.data.datasets.forEach(function (dataset, i) {
-                        var meta = chartInstance.getDatasetMeta(i);
-                        meta.data.forEach(function (bar, index) {
-                            var data = dataset.data[index];
-                            ctx.fillStyle = bar.options.backgroundColor;
-                            if(data != 0) {
-                                ctx.fillText(data.toFixed(2), bar.x, bar.y - 5);
-                            }
-                        });
-                    });
-                }
-            },
+            // animation: {
+            //     duration: 1000,
+            //     onComplete: function () {
+            //         var chartInstance = this,
+            //             ctx = chartInstance.ctx;
+            //         ctx.textAlign = 'center';
+            //         ctx.fillStyle = "rgba(0, 0, 0, 1)";
+            //         ctx.textBaseline = 'bottom';
+            //         ctx.font = "normal 12px Castledown Trial";
+            //
+            //         // Loop through each data in the datasets
+            //
+            //         this.data.datasets.forEach(function (dataset, i) {
+            //             var meta = chartInstance.getDatasetMeta(i);
+            //             meta.data.forEach(function (bar, index) {
+            //                 var data = dataset.data[index];
+            //                 ctx.fillStyle = bar.options.backgroundColor;
+            //                 if(data != 0) {
+            //                     ctx.fillText(data.toFixed(2), bar.x, bar.y - 5);
+            //                 }
+            //             });
+            //         });
+            //     }
+            // },
             plugins: {
                 title: {
                     display: true,

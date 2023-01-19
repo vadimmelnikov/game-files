@@ -229,7 +229,7 @@
 /*}*/
 
 #insights-container, #insights-grid {
-    /*gap: 45px;*/
+    gap: 8px;
 }
 
 .insight-container {
@@ -243,7 +243,7 @@
     gap: 15px;
     background: #FFFFFF;
     border-radius: 45px;
-    margin-bottom: 8px;
+    margin-bottom: 0px;
 }
 
 .insight-description {

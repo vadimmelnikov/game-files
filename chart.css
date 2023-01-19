@@ -408,7 +408,7 @@
 @media only screen and (max-width: 1240px) {
     .mcontainer{
         width: 100%;
-        padding: 0px 20px;
+        padding: 0px 30px;
     }
     .abtx {
         font-size: 24px;
@@ -419,7 +419,7 @@
 }
 @media only screen and (max-width: 800px) {
     .mcontainer{
-        padding: 0px 48px;
+        padding: 0px 16px;
     }
     .player-button{
         width: 102px;

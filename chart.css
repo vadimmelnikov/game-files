@@ -355,7 +355,7 @@
     height: auto;
     cursor: pointer;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     /*border-radius: 60px;*/
     gap: 15px;
@@ -416,6 +416,9 @@
         font-size: 24px;
     }
     #insights-grid {
+        flex-direction: column;
+    }
+    .player-button {
         flex-direction: column;
     }
 }

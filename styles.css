@@ -449,7 +449,9 @@ body {
   width: 100%;
   border-radius: 40px;
 }
-
+#gameDone{
+  background-color: #FFFFFF;
+}
 #canvas-overlay {
   display: flex;
   justify-content: space-between;

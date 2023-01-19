@@ -6,7 +6,7 @@
 // Marina profile ID
 // var userId = "6399ab9269253100049eef34";
 
-localStorage.setItem('memberstack', '{"spEditor":false,"defaultMembership":"6317441a067d830004f55397","colorCode":"2aa8ff","loginPage":"","allow_signup":false,"protected":[{"id":"basic-members","redirect":"login","urls":[{"url":"members","filter":"Starts"}],"access":true,"hide_links":false}],"hasRecaptchaV2":false,"hasRecaptchaV3":false,"redirectOverride":"","membership":{"id":"6317441a067d830004f55397","amount":"","status":"active","cancel_at_period_end":false,"name":"Basic","signupDate":"2022-12-20T11:31:49.000Z"},"information":{"first-name":"asd","last-name":"asd","newsletter-optin":true,"mongo-account-created":"created","webflow-member-id":"63a19d2898291283b1ff95c6","id":"63a19d2572cfbb0004c242be"},"testWarning":false,"email":"asd@asd.asd","hash":"335aa658ffac131409175951f1fd4218cdffd27038d5a5c765186b50d4ed807a","redirect":"members/dashboard","client_secret":"","requires_payment":false,"loginRedirect":"members/dashboard","logoutRedirect":"logout","uniqueContent":"","canceled":false}')
+// localStorage.setItem('memberstack', '{"spEditor":false,"defaultMembership":"6317441a067d830004f55397","colorCode":"2aa8ff","loginPage":"","allow_signup":false,"protected":[{"id":"basic-members","redirect":"login","urls":[{"url":"members","filter":"Starts"}],"access":true,"hide_links":false}],"hasRecaptchaV2":false,"hasRecaptchaV3":false,"redirectOverride":"","membership":{"id":"6317441a067d830004f55397","amount":"","status":"active","cancel_at_period_end":false,"name":"Basic","signupDate":"2022-12-20T11:31:49.000Z"},"information":{"first-name":"asd","last-name":"asd","newsletter-optin":true,"mongo-account-created":"created","webflow-member-id":"63a19d2898291283b1ff95c6","id":"63a19d2572cfbb0004c242be"},"testWarning":false,"email":"asd@asd.asd","hash":"335aa658ffac131409175951f1fd4218cdffd27038d5a5c765186b50d4ed807a","redirect":"members/dashboard","client_secret":"","requires_payment":false,"loginRedirect":"members/dashboard","logoutRedirect":"logout","uniqueContent":"","canceled":false}')
 
 var memberstackLocal = localStorage.getItem('memberstack');
 if(!memberstackLocal) {
@@ -662,10 +662,10 @@ $pencilButton.on("touchstart", () => {
 $('#canvas-controls-container .color-picker-item input').on( 'click', function(){
   context.strokeStyle = $(this).val();
   $('.color-picker-path').attr('fill', context.strokeStyle);
-  gameParameters.savedEraserVals.lineWidth = context.lineWidth;
-  context.lineWidth = gameParameters.savedPencilVals.lineWidth;
+  // gameParameters.savedEraserVals.lineWidth = context.lineWidth;
+  // context.lineWidth = gameParameters.savedPencilVals.lineWidth;
   gameParameters.eraserSelected = false;
-  $strokeWidthSlider.val(gameParameters.savedPencilVals.lineWidth);
+  // $strokeWidthSlider.val(gameParameters.savedPencilVals.lineWidth);
   $eraserButton.prop("id", "eraser-button");
   $pencilButton.prop("id", "pencil-button-selected");
 })

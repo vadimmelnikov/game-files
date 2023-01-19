@@ -452,9 +452,10 @@ window.addEventListener('DOMContentLoaded', async function() {
 
     $(document).ready(() => {
         $(".txt-or").text(drawingsArray.length);
-        $(".home-dash-link_number > div").text(drawingsArray.length);
-        if(drawingsArray.length === 0) {
-            $(".home-dash-link_number").css({display: 'none'});
+
+        if(drawingsArray.length > 0) {
+            $(".home-dash-link_number > div").text(drawingsArray.length);
+            $(".home-dash-link_number").removeClass('hide');
         }
         $(".txt-20-26 > span").text(drawingsTabArray.length);
         $(".par-name").text(userInfo.information['first-name']);

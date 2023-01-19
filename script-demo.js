@@ -870,7 +870,7 @@ const handleGameEnd = function (isRedirect = false) {
   // $endgameOptions.css("top", ($canvasWrap.height() - $endgameOptions.height()) / 2);
 
   if(isRedirect) {
-    window.location = 'https://www.mykanjo.com/members/parents-games/drawing-guessing';
+    window.location = 'https://new-3d33ad.webflow.io/members/parents/drawings';
   }
 };
 

@@ -495,7 +495,7 @@ window.addEventListener('DOMContentLoaded', async function() {
                         const option = draw.promptData[0].selectedPrompt;
                         $(`.status_${id}_${option}`).addClass('waiting');
                     }
-                }, drawingTime + 5000);
+                }, drawingTime + 8000);
             }
 
             requestQuestion.push({

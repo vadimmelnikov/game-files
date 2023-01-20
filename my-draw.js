@@ -1,6 +1,7 @@
 window.addEventListener('DOMContentLoaded', async function() {
     $(".loader-wrap").css({display: "flex", opacity: 1});
     // localStorage.setItem('memberstack', '{"spEditor":false,"defaultMembership":"6317441a067d830004f55397","colorCode":"2aa8ff","loginPage":"","allow_signup":false,"protected":[{"id":"basic-members","redirect":"login","urls":[{"url":"members","filter":"Starts"}],"access":true,"hide_links":false}],"hasRecaptchaV2":false,"hasRecaptchaV3":false,"redirectOverride":"","membership":{"id":"6317441a067d830004f55397","amount":"","status":"active","cancel_at_period_end":false,"name":"Basic","signupDate":"2022-09-26T14:42:02.000Z"},"information":{"first-name":"Stefan","last-name":"Bostock","newsletter-optin":true,"webflow-member-id":"6331bb6681d906d486929fe8","mongo-account-created":"created","id":"6331ba3a7a3db200049d62aa"},"testWarning":false,"email":"stefan@mykanjo.com","hash":"de058a004b6cc402bc51491d389a6889e528cb326d9382833377c764a68d5e24","redirect":"members/dashboard","client_secret":"","requires_payment":false,"loginRedirect":"members/dashboard","logoutRedirect":"logout","uniqueContent":"","canceled":false}')
+    localStorage.setItem('memberstack', '{"spEditor":false,"defaultMembership":"6317441a067d830004f55397","colorCode":"2aa8ff","loginPage":"","allow_signup":false,"protected":[{"id":"basic-members","redirect":"login","urls":[{"url":"members","filter":"Starts"}],"access":true,"hide_links":false}],"hasRecaptchaV2":false,"hasRecaptchaV3":false,"redirectOverride":"","membership":{"id":"6317441a067d830004f55397","amount":"","status":"active","cancel_at_period_end":false,"name":"Basic","signupDate":"2022-10-31T15:18:19.000Z"},"information":{"first-name":"Karen","last-name":"Kostanyan","newsletter-optin":true,"mongo-account-created":"created","webflow-member-id":"635fe73db4d34d122a880c23","id":"635fe73bfeb1f40004dadf0d"},"testWarning":false,"email":"karenkostanyan89@gmail.com","hash":"7bd54cabcd783852f92fa84730be69bafc8d99a09bf74fa3c802c2b356bdebe2","redirect":"members/dashboard","client_secret":"","requires_payment":false,"loginRedirect":"members/dashboard","logoutRedirect":"logout","uniqueContent":"","canceled":false}')
 
     var memberstackLocal = localStorage.getItem('memberstack');
     if(!memberstackLocal) {
@@ -315,8 +316,10 @@ window.addEventListener('DOMContentLoaded', async function() {
 
     function addDrawTab(tab, item) {
         const { drawingGuessID: { firstGuess, secondGuess, thirdGuess } , promptData, outOfTime } = item;
-        const [ promptDataArray ] = promptData;
-        const {selectedPrompt} = promptDataArray;
+        // const [ promptDataArray ] = promptData;
+        // const {selectedPrompt} = promptDataArray;
+        const trueAnswer = promptData.find((item) => item.selectedPrompt !== null);
+        const selectedPrompt = trueAnswer.selectedPrompt;
 
         let imageDiv = '';
         if(item.playerID.avatar === null) {
@@ -492,7 +495,9 @@ window.addEventListener('DOMContentLoaded', async function() {
                         sendQuestion(requestQuestion[index].data);
 
                         const draw = drawingsArray.find((item) => item._id === id);
-                        const option = draw.promptData[0].selectedPrompt;
+                        // const option = draw.promptData[0].selectedPrompt;
+                        const trueAnswer = draw.promptData.find((item) => item.selectedPrompt !== null);
+                        const option = trueAnswer.selectedPrompt
                         $(`.status_${id}_${option}`).addClass('waiting');
                     }
                 }, drawingTime + 7000);
@@ -577,6 +582,7 @@ window.addEventListener('DOMContentLoaded', async function() {
                     requestQuestion[isPlayIndex].selectoptions.push(option);
 
                     const draw = drawingsArray.find((item) => item._id === requestQuestion[isPlayIndex].id);
+                    const truePrompt = draw.promptData.find((item) => item.selectedPrompt !== null);
 
                     let isWrite = false;
                     if (requestQuestion[isPlayIndex].data.firstGuess === null && !isWrite) {
@@ -584,7 +590,7 @@ window.addEventListener('DOMContentLoaded', async function() {
                             selectedPrompt: option,
                             timeSinceGuessStart: Date.now() - requestQuestion[isPlayIndex].dateNow
                         }
-                        requestQuestion[isPlayIndex].data.correctPromptChosen = draw.promptData[0].selectedPrompt === option;
+                        requestQuestion[isPlayIndex].data.correctPromptChosen = truePrompt.selectedPrompt === option;
                         isWrite = true;
                     }
 
@@ -593,7 +599,7 @@ window.addEventListener('DOMContentLoaded', async function() {
                             selectedPrompt: option,
                             timeSinceGuessStart: Date.now() - requestQuestion[isPlayIndex].dateNow
                         }
-                        requestQuestion[isPlayIndex].data.correctPromptChosen = draw.promptData[0].selectedPrompt === option;
+                        requestQuestion[isPlayIndex].data.correctPromptChosen = truePrompt.selectedPrompt === option;
                         isWrite = true;
                     }
 
@@ -602,7 +608,7 @@ window.addEventListener('DOMContentLoaded', async function() {
                             selectedPrompt: option,
                             timeSinceGuessStart: Date.now() - requestQuestion[isPlayIndex].dateNow
                         }
-                        requestQuestion[isPlayIndex].data.correctPromptChosen = draw.promptData[0].selectedPrompt === option;
+                        requestQuestion[isPlayIndex].data.correctPromptChosen = truePrompt.selectedPrompt === option;
                     }
 
                     let statusClass = '';

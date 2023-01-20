@@ -512,7 +512,7 @@ window.addEventListener('DOMContentLoaded', async function() {
                     firstGuess:	null,
                     secondGuess: null,
                     thirdGuess: null,
-                    guessCountdownTime: drawingTime + 5000,
+                    guessCountdownTime: drawingTime + 8000,
                     correctPromptChosen: false
                 }
             })

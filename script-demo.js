@@ -23,6 +23,7 @@ $(window).on("resize.custom1", function () {
 });
 
 (async () => {
+  $("#canvas").css({display: 'none'});
   const membershipInfo = await MemberStack.onReady;
   drawingData.userInfo = {
     memberstackID: membershipInfo["id"]
@@ -741,6 +742,7 @@ $promptButtons.click(function () {
   $countdown.css({display: 'flex'});
   // $canvasOverlay.css("display", "flex");
   $body.addClass('gmactive');
+  $("#canvas").css({display: 'block'});
   beginDrawing();
 });
 
@@ -868,7 +870,7 @@ const handleGameEnd = function (isRedirect = false) {
   $endgameOptions.show(0);
   // centerElementInCanvas($endgameOptions);
   // $endgameOptions.css("top", ($canvasWrap.height() - $endgameOptions.height()) / 2);
-
+  $("#canvas").css({display: 'none'});
   if(isRedirect) {
     window.location = 'https://new-3d33ad.webflow.io/members/parents/drawings';
   }
@@ -886,7 +888,7 @@ $changeSettingsPlayAgainButton.click(() => {
 
 const openGameSettings = function () {
   $gameSettingsCard.show(0);
-  centerElementInCanvas($gameSettingsCard);
+  // centerElementInCanvas($gameSettingsCard);
 };
 
 const setPromptPreferences = function () {

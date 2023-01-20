@@ -57,9 +57,9 @@ window.addEventListener('DOMContentLoaded', async function() {
         const question = promptOptions.map((item, index) => {
             const letter = "abc"[index];
             return `
-                     <div data-option="${item.option}" data-id="${id}" class="draw-ch_item questions status_${id}_${item.option}">
+                     <div data-option="${item.option}" data-id="${id}" class="draw-ch_item disabled questions status_${id}_options status_${id}_${item.option}">
                         <div class="draw-ch_item_left">
-                            <div class="draw-ch_numb status_${id}_${item.option}">
+                            <div class="draw-ch_numb status_${id}_${item.option} status_${id}_options disabled">
                                 <div class="draw-ch_txt">${letter}</div>
                             </div>
                             <div class="txt-20-26">${item.value}</div>
@@ -475,6 +475,8 @@ window.addEventListener('DOMContentLoaded', async function() {
             }
 
             const drawingTime = draw.strokeData[draw.strokeData.length - 1].timeSinceGameStart;
+
+            $(`.status_${dataId}_options`).removeClass('disabled');
 
             const requestSetTimeOut = (id) => {
                 return setTimeout(() => {

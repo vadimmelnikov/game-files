@@ -450,6 +450,10 @@ window.addEventListener('DOMContentLoaded', async function() {
     setCanvasWidthHeight(drawingsTabArray, false);
     drawCanvas(drawingsTabArray);
     $(".loader-wrap").css({display: "none"});
+    if(drawingsArray.length === 0) {
+        $("#drawings-container").css({display: "none"});
+        $(".draw_head-no-items").css({display: "flex"});
+    }
 
     $(document).ready(() => {
         $(".txt-or").text(drawingsArray.length);

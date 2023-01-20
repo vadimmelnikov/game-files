@@ -25,7 +25,7 @@
 
 // window.Webflow.require('lottie').init()
 
-$("#ms-loader").css({display: "flex"});
+$(".loader-wrap").css({display: "flex", opacity: 1});
 $(document).ready(async function () {
     $("#ms-loader").css({display: "flex"});
     // localStorage.setItem('memberstack', '{"spEditor":false,"defaultMembership":"6317441a067d830004f55397","colorCode":"2aa8ff","loginPage":"","allow_signup":false,"protected":[{"id":"basic-members","redirect":"login","urls":[{"url":"members","filter":"Starts"}],"access":true,"hide_links":false}],"hasRecaptchaV2":false,"hasRecaptchaV3":false,"redirectOverride":"","membership":{"id":"6317441a067d830004f55397","amount":"","status":"active","cancel_at_period_end":false,"name":"Basic","signupDate":"2022-12-14T10:55:14.000Z"},"information":{"first-name":"Marina","last-name":"Romanova","newsletter-optin":false,"webflow-member-id":"6399ab9545bd049fdddbc676","mongo-account-created":"created","id":"6399ab9269253100049eef34"},"testWarning":false,"email":"marigoroma@gmail.com","hash":"02c026758ee975877aa142f4c839b4cfefe8e4491beb0e5b9a948ef9d60120ef","redirect":"members/dashboard","client_secret":"","requires_payment":false,"loginRedirect":"members/dashboard","logoutRedirect":"logout","uniqueContent":"","canceled":false}')
@@ -1866,5 +1866,5 @@ $(document).ready(async function () {
             sunburstTimeout = null;
         }, 1000);
     };
-    $("#ms-loader").css({display: "none"});
+    $(".loader-wrap").css({display: "none"});
 });

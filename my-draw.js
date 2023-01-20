@@ -495,7 +495,7 @@ window.addEventListener('DOMContentLoaded', async function() {
                         const option = draw.promptData[0].selectedPrompt;
                         $(`.status_${id}_${option}`).addClass('waiting');
                     }
-                }, drawingTime + 8000);
+                }, drawingTime + 7000);
             }
 
             requestQuestion.push({
@@ -512,7 +512,7 @@ window.addEventListener('DOMContentLoaded', async function() {
                     firstGuess:	null,
                     secondGuess: null,
                     thirdGuess: null,
-                    guessCountdownTime: drawingTime + 8000,
+                    guessCountdownTime: drawingTime + 5000,
                     correctPromptChosen: false
                 }
             })

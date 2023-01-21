@@ -10,7 +10,7 @@
 
 var memberstackLocal = localStorage.getItem('memberstack');
 if(!memberstackLocal) {
-  window.location.href = 'https://new-3d33ad.webflow.io/login'
+  window.location.href = 'https://www.mykanjo.com/login'
 }
 
 var jMemeber = JSON.parse(memberstackLocal);
@@ -872,7 +872,7 @@ const handleGameEnd = function (isRedirect = false) {
   // $endgameOptions.css("top", ($canvasWrap.height() - $endgameOptions.height()) / 2);
   // $("#canvas").css({display: 'none'});
   if(isRedirect) {
-    window.location = 'https://new-3d33ad.webflow.io/members/parents/drawings';
+    window.location = 'https://www.mykanjo.com/members/parents/drawings';
   }
 };
 

@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', async function() {
 
     var memberstackLocal = localStorage.getItem('memberstack');
     if(!memberstackLocal) {
-        window.location.href = 'https://new-3d33ad.webflow.io/login'
+        window.location.href = 'https://www.mykanjo.com/login'
     }
 
     var userInfo = JSON.parse(memberstackLocal);

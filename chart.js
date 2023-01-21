@@ -32,7 +32,7 @@ $(document).ready(async function () {
 
     var memberstackLocal = localStorage.getItem('memberstack');
     if(!memberstackLocal) {
-        window.location.href = 'https://new-3d33ad.webflow.io/login'
+        window.location.href = 'https://www.mykanjo.com/login'
     }
 
     var jMemeber = JSON.parse(memberstackLocal);

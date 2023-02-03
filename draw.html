@@ -1,0 +1,433 @@
+<html data-wf-domain="new-3d33ad.webflow.io" data-wf-page="63c26da4dd3beb48834e7b7a"
+      data-wf-site="639b28d64a19b13d69a32af9" class=" w-mod-js w-mod-ix">
+<head>
+    <meta charset="utf-8">
+    <title>Drawings</title>
+    <meta content="Drawings" property="og:title">
+    <meta content="Drawings" property="twitter:title">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="Webflow" name="generator">
+    <script src="https://unpkg.com/bowser@2.7.0/es5.js"></script>
+    <link href="https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/css/new-3d33ad.webflow.c61f5269f.css"
+          rel="stylesheet" type="text/css">
+    <link href="draw.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.1/lottie.min.js"
+            integrity="sha512-H6aKTjvYAazW0iNuGj1f2dZvSWlt1HGZGEDsXRPETo2IB4H6v36Vl2qiZNlCRxOp0kT7iBf+7USNPavNscZGAw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!--    <script src="draw.js"></script>-->
+    <script src="my-draw.js"></script>
+</head>
+<body>
+<div class="section nav-sec">
+    <div class="container nav">
+        <div class="nav-cont">
+            <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease"
+                 data-easing2="ease" role="banner" class="nav main w-nav">
+                <div class="nav-block"><a href="/" class="nav-logo w-nav-brand" aria-label="home"><img
+                        src="https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/639b31d8a7b77ae6c5a3674e_Logo.svg"
+                        loading="lazy" alt="" class="image-l"></a>
+                    <nav role="navigation" class="nav-menu w-nav-menu"><a href="/"
+                                                                          class="nav-link home w-nav-link">Home</a><a
+                            href="/members/pick-a-game" class="nav-link w-inline-block">
+                        <div class="nav-img-gc w-embed">
+                            <svg width="100%" height="auto" viewBox="0 0 22 21" fill="currentcolor"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 15.6673C20 18.2447 17.9107 20.334 15.3334 20.334C12.756 20.334 10.6667 18.2447 10.6667 15.6673C10.6667 13.09 12.756 11.0007 15.3334 11.0007C17.9107 11.0007 20 13.09 20 15.6673Z"></path>
+                                <path d="M15.756 0.667318C16.0126 0.222872 16.6541 0.222874 16.9107 0.667319L21.2409 8.16734C21.4975 8.61179 21.1767 9.16734 20.6635 9.16734H12.0032C11.49 9.16734 11.1693 8.61178 11.4259 8.16734L15.756 0.667318Z"></path>
+                                <path d="M0 6.33388C0 5.5975 0.596955 5.00054 1.33334 5.00054H8.00002C8.7364 5.00054 9.33336 5.5975 9.33336 6.33388V13.0006C9.33336 13.7369 8.7364 14.3339 8.00002 14.3339H1.33334C0.596957 14.3339 0 13.7369 0 13.0006V6.33388Z"></path>
+                            </svg>
+                        </div>
+                        <div>Game Center</div>
+                    </a><a href="/members/dashboard" class="nav-link dashbord w-inline-block">
+                        <div class="nav-img-gc db w-embed">
+                            <svg width="100%" height="auto" viewBox="0 0 18 19" fill="currentcolor"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 2C0 0.89543 0.895431 0 2 0H16C17.1046 0 18 0.895431 18 2V7C18 8.10457 17.1046 9 16 9H2C0.89543 9 0 8.10457 0 7V2Z"></path>
+                                <path d="M0 13C0 11.8954 0.895431 11 2 11H4C5.10457 11 6 11.8954 6 13V17C6 18.1046 5.10457 19 4 19H2C0.89543 19 0 18.1046 0 17V13Z"></path>
+                                <path d="M8 13C8 11.8954 8.89543 11 10 11H16C17.1046 11 18 11.8954 18 13V17C18 18.1046 17.1046 19 16 19H10C8.89543 19 8 18.1046 8 17V13Z"></path>
+                            </svg>
+                        </div>
+                        <div>Dashboard</div>
+                    </a><a href="/tips-advice" class="nav-link tips w-inline-block">
+                        <div class="nav-img-gc tips w-embed">
+                            <svg width="100%" height="auto" viewBox="0 0 16 22" fill="currentcolor"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.98795 20H6.01205C5.43374 20 5 20.4286 5 21C5 21.5714 5.43374 22 6.01205 22H9.98795C10.5663 22 11 21.5714 11 21C11 20.4286 10.5663 20 9.98795 20Z"></path>
+                                <path d="M6.40664 0.155676C3.23666 0.733964 0.734042 3.29495 0.150098 6.35162C-0.433846 9.40829 0.734042 12.1345 2.81956 13.8694C3.23666 14.1998 3.4035 14.6955 3.4035 15.1912V16.1825C3.4035 17.1739 4.2377 18 5.23875 18H10.7445C11.7456 18 12.5798 17.1739 12.5798 16.1825V15.1912C12.5798 14.6955 12.7466 14.1998 13.1637 13.8694C14.9155 12.3823 16 10.2344 16 7.83865C16 3.04712 11.4953 -0.835675 6.40664 0.155676Z"></path>
+                            </svg>
+                        </div>
+                        <div>Tips &amp; Advice</div>
+                    </a><a href="/schools" class="nav-link tips w-inline-block">
+                        <div class="nav-img-gc tips w-embed">
+                            <svg width="100%" height="auto" viewBox="0 0 24 24" fill="currentcolor"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM8.5 10C9.32843 10 10 9.32843 10 8.5C10 7.67157 9.32843 7 8.5 7C7.67157 7 7 7.67157 7 8.5C7 9.32843 7.67157 10 8.5 10ZM17 8.5C17 9.32843 16.3284 10 15.5 10C14.6716 10 14 9.32843 14 8.5C14 7.67157 14.6716 7 15.5 7C16.3284 7 17 7.67157 17 8.5ZM16.4856 16.3742C16.9684 16.106 17.1424 15.4972 16.8742 15.0144C16.6059 14.5316 15.9971 14.3577 15.5144 14.6259C15.3075 14.7408 15.1035 14.8437 14.9025 14.9356L8.57643 14.6829C8.12738 14.3661 7.50613 14.471 7.18627 14.9188C6.86526 15.3682 6.96935 15.9928 7.41876 16.3138L8 15.5001C7.41876 16.3138 7.41921 16.3141 7.41966 16.3144L7.42065 16.3151L7.42286 16.3167L7.42829 16.3205L7.4431 16.3308C7.45472 16.3388 7.46982 16.3491 7.48835 16.3613C7.52538 16.3858 7.57613 16.4185 7.63999 16.4573C7.76761 16.5348 7.94827 16.6374 8.17703 16.7495C8.63355 16.9733 9.28827 17.2383 10.1001 17.4147C11.7388 17.771 13.9929 17.7591 16.4856 16.3742ZM8.57698 14.6833L8.57642 14.6829L8.57643 14.6829C8.57661 14.683 8.5768 14.6832 8.57698 14.6833ZM8.57698 14.6833L8.57726 14.6835L8.59247 14.6937C8.6089 14.7046 8.63774 14.7233 8.67837 14.7479C8.75974 14.7974 8.88767 14.8705 9.05735 14.9537C9.3977 15.1205 9.89923 15.3244 10.5249 15.4604C11.6338 15.7014 13.1526 15.7359 14.9023 14.9357L16.8742 15.0144L14.9025 14.9356C14.9025 14.9357 14.9024 14.9357 14.9023 14.9357L8.57698 14.6833Z"></path>
+                            </svg>
+                        </div>
+                        <div>Partnerships</div>
+                    </a></nav>
+                    <a href="#" class="nav-person hide w-inline-block">
+                        <div class="txt-20-26 tab-hide">Clara</div>
+                        <div class="nav-avatar">
+                            <div class="nav-avatar_top"
+                                 style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                <div class="nav-avatar-circle _1"
+                                     style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"></div>
+                                <div class="nav-avatar-circle _2"></div>
+                            </div>
+                            <img src="https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63a18289a8c931ed1392038b_avatar-smile.svg"
+                                 loading="lazy" alt="" class="avatar-smile_neob"
+                                 style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                        </div>
+                    </a>
+                    <div class="nav-button w-nav-button" style="-webkit-user-select: text;" aria-label="menu"
+                         role="button" tabindex="0" aria-controls="w-nav-overlay-0" aria-haspopup="menu"
+                         aria-expanded="false"><img
+                            src="https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63a1811b37e85e5de1739a42_little.svg"
+                            loading="lazy" alt="" class="nav-burg _1"><img
+                            src="https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63a5d6a7f8cc911246358d62_little.svg"
+                            loading="lazy" alt="" class="nav-burg _2"></div>
+                    <div class="log-buttons"><a href="#/ms/logout" class="log-btn w-inline-block">
+                        <div class="txt-20-26">Log&nbsp;Out</div>
+                    </a></div>
+                </div>
+                <div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-0"></div>
+            </div>
+        </div>
+        <div class="nav-logo-tab-mob"><a href="/" class="nav-logo-opened w-inline-block"><img
+                src="https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/639b31d8a7b77ae6c5a3674e_Logo.svg"
+                loading="lazy" alt="" class="image-l"></a></div>
+    </div>
+</div>
+<div class="w-embed">
+    <style>
+        /*Scrollbar Transparency*/
+        .draw-all-pls::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0);
+            border-style: none;
+        }
+
+        /*Scrollbar Transparency*/
+        .draw-all-pls::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0);
+            border-style: solid;
+            border-color: rgba(255, 255, 255, 0);
+        }
+
+        .draw-all-pls::-webkit-scrollbar {
+            display: none;
+        / / Safari and Chrome
+        }
+
+        /*Scrollbar Transparency*/
+        .draw-ch_wrapper::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0);
+            border-style: none;
+        }
+
+        /*Scrollbar Transparency*/
+        .draw-ch_wrapper::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0);
+            border-style: solid;
+            border-color: rgba(255, 255, 255, 0);
+        }
+
+        .draw-ch_wrapper::-webkit-scrollbar {
+            display: none;
+        / / Safari and Chrome
+        }
+    </style>
+</div>
+<div class="section par-dash-sec">
+    <div class="container">
+        <div class="parents-dash-head"><h1>Hi <span class="par-name">Henry</span>!</h1>
+            <div class="parents-dash-head-links"><a href="/members/dashboard"
+                                                    class="home-dash_head-link w-inline-block">
+                <div class="txt-20-26">Home</div>
+            </a><a href="/members/parents/insights" class="home-dash_head-link w-inline-block">
+                <div class="txt-20-26">Insights</div>
+            </a><a href="/members/parents/drawings" aria-current="page"
+                   class="home-dash_head-link w-inline-block w--current">
+                <div class="txt-20-26">Drawings</div>
+                <div class="home-dash-link_number">
+                    <div>1</div>
+                </div>
+            </a><a href="/members/parents/account" class="home-dash_head-link hide w-inline-block">
+                <div class="txt-20-26">Account</div>
+            </a></div>
+        </div>
+    </div>
+</div>
+<div class="section par-dash-sec bg_ins-wht">
+    <div class="container">
+        <div class="draw_head">
+            <div class="draw-head_top">
+                <div class="drawings-head-title_wrap mb-16"><h2 class="h2-draw">Drawings to review</h2>
+                    <p class="h2-draw txt-or">15</p></div>
+                <p class="txt-20-26">See how well you know each other by watching your child's drawings come to life and
+                    guessing what they are drawing before the time runs out!</p></div>
+            <div class="draw_head-content">
+                <div class="draw_head-no-items"><img
+                        src="https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63bd08a7d10e773989df8079_logout.png"
+                        loading="lazy" sizes="100vw"
+                        srcset="https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63bd08a7d10e773989df8079_logout-p-500.png 500w, https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63bd08a7d10e773989df8079_logout.png 572w"
+                        alt="" class="drawings_no-item-img">
+                    <div class="drawings_no-item-text"><p class="txt-32-42">No drawings to review yet...</p>
+                        <p class="txt-20-26_news">Grab you kid and make them draw</p></div>
+                    <a href="#" class="remove-profile-btn w-inline-block">
+                        <div class="txt-20-26-gc">Start drawing</div>
+                    </a></div>
+                <div id="drawings-container" class="draw-ch_wrapper">
+                    <div class="draw-ch_slide-block">
+                        <div class="draw-ch_top">
+                            <div class="draw-ch_img-wrap">
+                                <div class="new-player_select-lottie" data-w-id="c57a3bd2-fcf7-3c6e-e6b3-8dcf2860210a"
+                                     data-animation-type="lottie"
+                                     data-src="https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63bfcfa1bd9b3282a0dbdb36_Konjo_2_Glasses_bake.json"
+                                     data-loop="0" data-direction="1" data-autoplay="1" data-is-ix2-target="0"
+                                     data-renderer="svg" data-duration="0">
+                                </div>
+                            </div>
+                            <div class="deaw-ch_top-para">
+                                <div class="par-dash-txt-16-21">Name</div>
+                                <div class="par-dash-txt-16-21 op-6">3 hours ago</div>
+                            </div>
+                        </div>
+                        <div class="canv-block w-embed">
+                            <canvas class="draw-canv"></canvas>
+                        </div>
+                        <div class="draw-ch_slide_bttm">
+                            <div class="draw-ch_item">
+                                <div class="draw-ch_item_left">
+                                    <div class="draw-ch_numb">
+                                        <div class="draw-ch_txt">A</div>
+                                    </div>
+                                    <div class="txt-20-26">A Donut</div>
+                                </div>
+                                <div class="draw-success-img"></div>
+                            </div>
+                            <div class="draw-ch_item">
+                                <div class="draw-ch_item_left">
+                                    <div class="draw-ch_numb">
+                                        <div class="draw-ch_txt">A</div>
+                                    </div>
+                                    <div class="txt-20-26">A Happy Family</div>
+                                </div>
+                                <div class="draw-success-img"></div>
+                            </div>
+                            <div class="draw-ch_item">
+                                <div class="draw-ch_item_left">
+                                    <div class="draw-ch_numb">
+                                        <div class="draw-ch_txt">A</div>
+                                    </div>
+                                    <div class="txt-20-26">Good Lunch</div>
+                                </div>
+                                <div class="draw-success-img"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section par-dash-sec bg_ins-wht">
+    <div class="container">
+        <div class="draw_head bttm-h">
+            <div class="draw-head_top">
+                <div class="drawings-head-title_wrap mb-16"><h3 class="h2-m-46">All drawings</h3></div>
+                <p class="txt-20-26">Since you joinded Kanjo your children created <span>74</span> drawings</p></div>
+            <div class="draw_head-content bttm-c">
+                <div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100"
+                     class="w-tabs">
+                    <div class="draw-all-pls w-tab-menu" role="tablist">
+                    </div>
+                    <div class="draw-all-pls-tabs-cont w-tab-content">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section">
+    <div class="container">
+        <div class="footer">
+            <div class="footer-main">
+                <div class="footer-main_left"><img
+                        src="https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/639c18ff2cb6457f1a15b67c_footer-c.svg"
+                        loading="lazy" alt="" class="footer-img">
+                    <div class="action">2022 &nbsp;Kanjo Ltd.</div>
+                </div>
+                <div class="footer-main_links"><a href="/contact-us" class="footer-link w-inline-block">
+                    <div class="txt-20-26">Contact</div>
+                </a>
+                    <div class="footer-socials-wrp"><a href="https://www.facebook.com/groups/304796791373912"
+                                                       target="_blank" class="footer-socials w-inline-block">
+                        <div class="social-omg w-embed">
+                            <svg width="100%" height="auto" viewBox="0 0 26 26" fill="currentcolor"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M13 0C5.82029 0 0 5.85586 0 13.0794C0 19.6078 4.75391 25.0188 10.9688 26V16.8602H7.66797V13.0794H10.9688V10.1979C10.9688 6.91984 12.9096 5.10916 15.879 5.10916C17.3014 5.10916 18.7891 5.36462 18.7891 5.36462V8.58339H17.1498C15.5349 8.58339 15.0313 9.5916 15.0313 10.626V13.0794H18.6367L18.0604 16.8602H15.0313V26C21.2461 25.0188 26 19.6078 26 13.0794C26 5.85586 20.1797 0 13 0Z"></path>
+                            </svg>
+                        </div>
+                    </a><a href="https://www.instagram.com/kanjohealth/?hl=en" target="_blank"
+                           class="footer-socials w-inline-block">
+                        <div class="social-omg w-embed">
+                            <svg width="100%" height="auto" viewBox="0 0 24 24" fill="currentcolor"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M0 12C0 7.79961 0 5.69941 0.817451 4.09507C1.5365 2.68386 2.68386 1.5365 4.09507 0.817451C5.69941 0 7.79961 0 12 0C16.2004 0 18.3006 0 19.9049 0.817451C21.3161 1.5365 22.4635 2.68386 23.1825 4.09507C24 5.69941 24 7.79961 24 12C24 16.2004 24 18.3006 23.1825 19.9049C22.4635 21.3161 21.3161 22.4635 19.9049 23.1825C18.3006 24 16.2004 24 12 24C7.79961 24 5.69941 24 4.09507 23.1825C2.68386 22.4635 1.5365 21.3161 0.817451 19.9049C0 18.3006 0 16.2004 0 12ZM17.3337 12.0004C17.3337 14.9459 14.9459 17.3337 12.0004 17.3337C9.05488 17.3337 6.66707 14.9459 6.66707 12.0004C6.66707 9.05488 9.05488 6.66707 12.0004 6.66707C14.9459 6.66707 17.3337 9.05488 17.3337 12.0004ZM18.6663 6.66547C19.4026 6.66547 19.9996 6.06851 19.9996 5.33213C19.9996 4.59575 19.4026 3.9988 18.6663 3.9988C17.9299 3.9988 17.3329 4.59575 17.3329 5.33213C17.3329 6.06851 17.9299 6.66547 18.6663 6.66547Z"></path>
+                            </svg>
+                        </div>
+                    </a><a href="https://www.linkedin.com/company/79367992" target="_blank"
+                           class="footer-socials w-inline-block">
+                        <div class="social-omg w-embed">
+                            <svg width="100%" height="auto" viewBox="0 0 24 24" fill="currentcolor"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.4491 20.4496H16.8931V14.8805C16.8931 13.5525 16.8694 11.8429 15.0436 11.8429C13.1915 11.8429 12.9081 13.2899 12.9081 14.7838V20.4492H9.35204V8.9969H12.7658V10.562H12.8136C13.1553 9.97782 13.6489 9.49727 14.2421 9.17149C14.8352 8.84572 15.5056 8.68693 16.1819 8.71203C19.7861 8.71203 20.4506 11.0828 20.4506 14.167L20.4491 20.4496ZM5.33963 7.43144C4.93149 7.43151 4.53248 7.31055 4.19308 7.08385C3.85368 6.85715 3.58913 6.53489 3.43287 6.15783C3.27661 5.78077 3.23567 5.36584 3.31522 4.96551C3.39478 4.56518 3.59125 4.19742 3.8798 3.90876C4.16835 3.6201 4.53601 3.42348 4.9363 3.34378C5.33659 3.26408 5.75153 3.30488 6.12863 3.46101C6.50574 3.61713 6.82808 3.88158 7.05489 4.22092C7.2817 4.56025 7.40281 4.95922 7.40288 5.36738C7.40293 5.63839 7.3496 5.90675 7.24594 6.15715C7.14228 6.40754 6.99031 6.63507 6.79872 6.82674C6.60713 7.0184 6.37967 7.17045 6.12932 7.27421C5.87897 7.37796 5.61063 7.43139 5.33963 7.43144ZM7.11765 20.4496H3.5579V8.9969H7.11765V20.4496ZM22.222 0.00163456H1.77099C1.30681 -0.00360389 0.859533 0.175663 0.527455 0.500042C0.195378 0.824421 0.00566505 1.26737 0 1.73156V22.2681C0.00547116 22.7325 0.195068 23.1758 0.527134 23.5005C0.8592 23.8252 1.30658 24.0048 1.77099 23.9999H22.222C22.6873 24.0057 23.1359 23.8266 23.4693 23.5019C23.8027 23.1772 23.9936 22.7334 24 22.2681V1.73008C23.9934 1.26497 23.8024 0.821515 23.469 0.497144C23.1356 0.172773 22.6871 -0.00598143 22.222 0.000152822"></path>
+                            </svg>
+                        </div>
+                    </a><a href="https://www.tiktok.com/@kanjohealth" target="_blank"
+                           class="footer-socials w-inline-block">
+                        <div class="social-omg w-embed">
+                            <svg width="100%" height="auto" viewBox="0 0 26 26" fill="currentcolor"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M13 26C20.1797 26 26 20.1797 26 13C26 5.8203 20.1797 0 13 0C5.8203 0 0 5.8203 0 13C0 20.1797 5.8203 26 13 26ZM20.5378 11.3049C20.6913 11.3042 20.8447 11.2967 20.9975 11.2824H21.0001V8.28732C19.8332 8.2052 18.7334 7.7308 17.893 6.94707C17.0526 6.16334 16.5251 5.12016 16.4027 3.99993H13.7246L13.6966 16.5665C13.6966 18.1082 12.2823 19.323 10.6808 19.323C9.91185 19.323 9.17441 19.0289 8.63068 18.5054C8.08696 17.982 7.7815 17.2721 7.7815 16.5318C7.7815 15.7916 8.08696 15.0816 8.63068 14.5582C9.17441 14.0347 9.91185 13.7407 10.6808 13.7407C10.77 13.7407 10.8562 13.752 10.9425 13.7634C10.9722 13.7673 11.002 13.7712 11.0319 13.7747V11.0797C11.0042 11.0781 10.9766 11.0762 10.9489 11.0744C10.8601 11.0684 10.7712 11.0624 10.6808 11.0624C9.55726 11.0624 8.45897 11.3832 7.52479 11.9841C6.59061 12.585 5.86251 13.4391 5.43256 14.4384C5.0026 15.4377 4.89011 16.5372 5.10929 17.5981C5.32848 18.6589 5.86951 19.6333 6.66396 20.3982C7.45842 21.163 8.47061 21.6838 9.57255 21.8948C10.6745 22.1059 11.8167 21.9976 12.8547 21.5836C13.8927 21.1697 14.7799 20.4688 15.4041 19.5695C16.0283 18.6701 16.3614 17.6128 16.3614 16.5312V9.13198C16.8154 9.7995 17.435 10.3477 18.1641 10.727C18.8932 11.1064 19.709 11.305 20.5378 11.3049Z"></path>
+                            </svg>
+                        </div>
+                    </a><a href="https://mobile.twitter.com/kanjohealth" class="footer-socials w-inline-block">
+                        <div class="social-omg w-embed">
+                            <svg width="100%" height="auto" viewBox="0 0 26 26" fill="currentcolor"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.1744 22C17.9816 22 23.348 13.5292 23.348 6.19587C23.348 5.95757 23.348 5.71926 23.3376 5.48095C24.3776 4.6902 25.2824 3.71531 26 2.61043C25.0224 3.05455 23.9928 3.35785 22.932 3.48783C24.0448 2.79458 24.8768 1.70053 25.272 0.4115C24.2216 1.06143 23.0776 1.51638 21.8816 1.75469C19.864 -0.487569 16.484 -0.595891 14.3312 1.51638C12.948 2.8704 12.3552 4.89602 12.792 6.82414C8.5176 6.59666 4.5136 4.48439 1.8096 1.0181C0.3952 3.55283 1.1128 6.80248 3.4632 8.4273C2.6104 8.40564 1.7888 8.16733 1.04 7.73404C1.04 7.75571 1.04 7.77737 1.04 7.79903C1.04 10.4421 2.8288 12.7168 5.3248 13.2476C4.5344 13.4751 3.7128 13.5076 2.912 13.3451C3.6088 15.609 5.616 17.158 7.8936 17.2014C6.0008 18.7504 3.6712 19.5844 1.2688 19.5844C0.8424 19.5844 0.416 19.5519 0 19.5086C2.444 21.1443 5.2728 22 8.1744 22Z"></path>
+                            </svg>
+                        </div>
+                    </a></div>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <div class="footer_bottom_block">
+                    <div class="txt-16-21">72 Dean St, London W1D 3SB, UK</div>
+                    <a href="mailto:hello@mykanjo.com" class="footer-mail-link w-inline-block">
+                        <div class="txt-16-21">hello@mykanjo.com</div>
+                    </a></div>
+                <div class="footer_bottom_block right"><a href="#" class="footer_bottom-txt-link w-inline-block">
+                    <div class="txt-16-21">Privacy policy</div>
+                </a><a href="#" class="footer_bottom-txt-link w-inline-block">
+                    <div class="txt-16-21">Terms of service</div>
+                </a></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=639b28d64a19b13d69a32af9"
+        type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+        crossorigin="anonymous"></script>
+<script src="https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/js/webflow.1a4a26aeb.js"
+        type="text/javascript"></script>
+<!--[if lte IE 9]>
+<script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+<div class="ms-style" style="position: relative; z-index: 2147483645;">
+    <div id="ms-loader" class="ms-loader" style="display:none">
+        <div class="ms-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="w-embed">
+            <style>.ms-loader {
+                position: fixed;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 1000000;
+                display: none;
+                padding-bottom: 5vh;
+                -webkit-box-pack: center;
+                -webkit-justify-content: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                -webkit-align-items: center;
+                -ms-flex-align: center;
+                align-items: center;
+                background-color: rgba(0, 0, 0, .7)
+            }
+
+            .ms-ellipsis {
+                display: inline-block;
+                position: relative;
+                width: 64px;
+                height: 64px
+            }
+
+            .ms-ellipsis div {
+                position: absolute;
+                top: 27px;
+                width: 11px;
+                height: 11px;
+                border-radius: 50%;
+                background: #fff;
+                animation-timing-function: cubic-bezier(0, 1, 1, 0)
+            }
+
+            .ms-ellipsis div:nth-child(1) {
+                left: 6px;
+                animation: ms-ellipsis1 .6s infinite
+            }
+
+            .ms-ellipsis div:nth-child(2) {
+                left: 6px;
+                animation: ms-ellipsis2 .6s infinite
+            }
+
+            .ms-ellipsis div:nth-child(3) {
+                left: 26px;
+                animation: ms-ellipsis2 .6s infinite
+            }
+
+            .ms-ellipsis div:nth-child(4) {
+                left: 45px;
+                animation: ms-ellipsis3 .6s infinite
+            }
+
+            @keyframes ms-ellipsis1 {
+                0% {
+                    transform: scale(0)
+                }
+                100% {
+                    transform: scale(1)
+                }
+            }
+
+            @keyframes ms-ellipsis3 {
+                0% {
+                    transform: scale(1)
+                }
+                100% {
+                    transform: scale(0)
+                }
+            }
+
+            @keyframes ms-ellipsis2 {
+                0% {
+                    transform: translate(0, 0)
+                }
+                100% {
+                    transform: translate(19px, 0)
+                }
+            }</style>
+        </div>
+    </div>
+</div>
+<div id="ms-message-box" class="ms-style" style="display: none; position: relative; z-index: 2147483647;">
+    <div id="ms-error-message-box" class="ms-error-message">
+        <div id="ms-message">There was an error</div>
+    </div>
+</div>
+</body>
+</html>

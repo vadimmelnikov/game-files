@@ -3,8 +3,18 @@
 // TODO: maybe offsetTop is more suitable than getBoundingClientRect where you've used the latter below
 // IIFE for adding membership info to session data
 
-// Marina profile ID 
-var userId = "6399ab9269253100049eef34";
+// Marina profile ID
+// var userId = "6399ab9269253100049eef34";
+
+// localStorage.setItem('memberstack', '{"spEditor":false,"defaultMembership":"6317441a067d830004f55397","colorCode":"2aa8ff","loginPage":"","allow_signup":false,"protected":[{"id":"basic-members","redirect":"login","urls":[{"url":"members","filter":"Starts"}],"access":true,"hide_links":false}],"hasRecaptchaV2":false,"hasRecaptchaV3":false,"redirectOverride":"","membership":{"id":"6317441a067d830004f55397","amount":"","status":"active","cancel_at_period_end":false,"name":"Basic","signupDate":"2022-12-20T11:31:49.000Z"},"information":{"first-name":"asd","last-name":"asd","newsletter-optin":true,"mongo-account-created":"created","webflow-member-id":"63a19d2898291283b1ff95c6","id":"63a19d2572cfbb0004c242be"},"testWarning":false,"email":"asd@asd.asd","hash":"335aa658ffac131409175951f1fd4218cdffd27038d5a5c765186b50d4ed807a","redirect":"members/dashboard","client_secret":"","requires_payment":false,"loginRedirect":"members/dashboard","logoutRedirect":"logout","uniqueContent":"","canceled":false}')
+
+var memberstackLocal = localStorage.getItem('memberstack');
+if(!memberstackLocal) {
+  window.location.href = 'https://www.mykanjo.com/login'
+}
+
+var jMemeber = JSON.parse(memberstackLocal);
+var userId = jMemeber.information.id;
 
 $(window).on("resize.custom1", function () {
   setTimeout(() => {
@@ -13,6 +23,7 @@ $(window).on("resize.custom1", function () {
 });
 
 (async () => {
+  // $("#canvas").css({display: 'none'});
   const membershipInfo = await MemberStack.onReady;
   drawingData.userInfo = {
     memberstackID: membershipInfo["id"]
@@ -24,27 +35,61 @@ $(window).on("resize.custom1", function () {
   });
 
   const playerCardGenerator = function (name, avatar, playerID) {
-    const jpgStrArr = [
-      "634548b9ae4c28d270dc4e8b_avatar_01_pineapple",
-      "634548b9235565840ef0b0da_avatar_02_rabbit",
-      "634548b9ab5f9d591adb4650_avatar_03_house",
-      "634545e58f4ce3058b5c97b4_avatar_04_circle",
-      "634548dfab5f9d2d7edb4a21_avatar_05_apple",
-      "634545a66c9af3616cf9a595_avatar_06_square",
-      "634548ba0f64bcf6af4683fb_avatar_07_cat",
-      "634548bb0565145a3fd769ca_avatar_08_melon",
-      "634545a61033b34d1f7edc06_avatar_09_triangle",
-      "635bb4231f3d76829fb9ba0c_avatar_00_guest"
-    ];
-    const avatarSlug = "\\d_" + avatar + "$";
-    const matchedStr = jpgStrArr.find((str) => {
-      const regex = new RegExp(avatarSlug, "g");
-      return str.match(regex) !== null;
-    });
+    // const jpgStrArr = [
+    //   "634548b9ae4c28d270dc4e8b_avatar_01_pineapple",
+    //   "634548b9235565840ef0b0da_avatar_02_rabbit",
+    //   "634548b9ab5f9d591adb4650_avatar_03_house",
+    //   "634545e58f4ce3058b5c97b4_avatar_04_circle",
+    //   "634548dfab5f9d2d7edb4a21_avatar_05_apple",
+    //   "634545a66c9af3616cf9a595_avatar_06_square",
+    //   "634548ba0f64bcf6af4683fb_avatar_07_cat",
+    //   "634548bb0565145a3fd769ca_avatar_08_melon",
+    //   "634545a61033b34d1f7edc06_avatar_09_triangle",
+    //   "635bb4231f3d76829fb9ba0c_avatar_00_guest"
+    // ];
+    // const avatarSlug = "\\d_" + avatar + "$";
+    // const matchedStr = jpgStrArr.find((str) => {
+    //   const regex = new RegExp(avatarSlug, "g");
+    //   return str.match(regex) !== null;
+    // });
+
+    let avatarSrc = '';
+    if (avatar === 'guest') {
+      avatarSrc = 'https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63c51697a9b6a0691084908b_guest-norm.png';
+    };
+
+    if(avatar === 'pineapple') {
+      avatarSrc = 'https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63bfcfa236a47c02d5e7bdc2_Konjo_6_Yellow_orange_bake.json';
+    } else if(avatar === 'rabbit') {
+      avatarSrc = 'https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63bfcfa2e38261a8839209a9_Konjo_3_Green_bake.json';
+    }else if(avatar === 'house') {
+      avatarSrc = 'https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63bfcfa1ccb1e1320b34ee7f_Konjo_1_Purplesmile_bake.json';
+    }else if(avatar === 'circle') {
+      avatarSrc = 'https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63bfcfa26cd7cb745d745573_Konjo_7_Robot_bake.json';
+    }else if(avatar === 'apple') {
+      avatarSrc = 'https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63bfcfa236a47c02d5e7bdc2_Konjo_6_Yellow_orange_bake.json';
+    }else if(avatar === 'square') {
+      avatarSrc = 'https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63bfcfa2e3826121349209a8_Konjo_5_Yellow_bake.json';
+    }else if(avatar === 'cat') {
+      avatarSrc = 'https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63bfcfa2e38261eb289209ab_Konjo_9_Owl_bake.json';
+    }else if(avatar === 'melon') {
+      avatarSrc = 'https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63bfcfa2335f3837cbdeba09_Konjo_4_Ninja_bake.json';
+    }else if(avatar === 'triangle') {
+      avatarSrc = 'https://uploads-ssl.webflow.com/639b28d64a19b13d69a32af9/63bfcfa294906e9c5cfbf74c_Konjo_8_Pink_bake.json';
+    }
+
     const firstName = name.match(/\w+/g)[0];
+
+    let image = '';
+    if(avatar === 'guest') {
+      image = `<img class="avatarimg" src="${avatarSrc}">`
+    } else {
+      image = `<div class="player-button-avatar" data-src=${avatarSrc}></div>`
+    }
+
     const $playerCard = $(
-      `<button class="player-card">
-        <img class="player-card-avatar" src='https://uploads-ssl.webflow.com/6315d8bfcaf1234c30aa1942/${matchedStr}.jpg'>
+        `<button class="player-card">
+       ${image}
         <p class="player-card-name">${firstName}</p>
       </button>`
     );
@@ -71,10 +116,43 @@ $(window).on("resize.custom1", function () {
     }
   });
   // A decent delay is needed here as the position must be calculated after the images have loaded - an alternative could be to put an avatar or player card min-height in css?
-  setTimeout(() => {
-    $pregameCard.show(0);
-    centerElementInCanvas($pregameCard);
-  }, 1000);
+  let x =[];
+  // setTimeout(() => {
+  //   $pregameCard.show(0);
+  //   centerElementInCanvas($pregameCard);
+  //   for(let i=0;i<$('.player-button-avatar').length;i++) {
+  //     const f = Math.floor(Math.random()*9999);
+  //     const t = lottie.loadAnimation({
+  //       container: document.getElementsByClassName('player-button-avatar')[i],
+  //       render: 'svg',
+  //       loop: false,
+  //       autoplay: true,
+  //       path:  document.getElementsByClassName('player-button-avatar')[i].getAttribute('data-src'),
+  //       name: f
+  //     })
+  //     x.push({
+  //       name: f,
+  //       l: t
+  //     })
+  //   }
+  // }, 1000);
+  // const avatarsLoad = document.getElementsByClassName('player-button-avatar');
+  $pregameCard.show(0);
+  centerElementInCanvas($pregameCard);
+
+  for(let i=0; i<$('.player-button-avatar').length; i++) {
+    let animationSkipForward = lottie.loadAnimation({
+      container: document.getElementsByClassName('player-button-avatar')[i],
+      renderer: 'svg',
+      loop: false,
+      autoplay: false,
+      path: document.getElementsByClassName('player-button-avatar')[i].getAttribute('data-src')
+    });
+
+    document.getElementsByClassName('player-button-avatar')[i].addEventListener('mouseenter', function () {
+      animationSkipForward.playSegments([0, 60], true);
+    });
+  }
 })();
 
 const centerElementInCanvas = function (jqueryElement) {
@@ -147,6 +225,7 @@ const $eraserImage = $("#eraser-image");
 // const $pencilSVG = $("#pencil-svg");
 const $penColor = $(".color-pen");
 const $colorPicker = $("#color-picker");
+const $colorPickerList = $("#color-picker-list");
 const $submitCountdownContainer = $("#submit-countdown-container");
 // const $countdownContainer = $("#countdown");
 const $countdownStroke = $(".cls-1");
@@ -159,6 +238,11 @@ const $submitEarlyButton = $("#submit-early-button");
 const $endgameOptions = $("#endgame-options-container");
 const $playAgainButton = $("#play-again-button");
 const $changeSettingsPlayAgainButton = $("#change-settings-button");
+const $body = $("body");
+const $timUp = $("#timUp");
+const $continuePlay = $("#continuePlay");
+const $gameDone = $("#gameDone");
+const $countdown = $("#countdown");
 
 
 const mobileMediaMatcher = window.matchMedia(
@@ -337,6 +421,9 @@ const resetStrokeParameters = function () {
   $strokeWidthSlider.val(16);
   $eraserButton.prop("id", "eraser-button");
   $pencilButton.prop("id", "pencil-button-selected");
+  // $canvasOverlay.css({display: 'block'})
+  $('.color-picker-item > input').prop('checked' , false);
+  $('.color-picker-path').attr('fill', '#000000');
 };
 
 // Three painting / erasing functions for 1) starting new stroke 2) continuing stroke and 3) ending stroke
@@ -540,6 +627,17 @@ if (
   });
 }
 
+$('#openpicker').click(()=>{
+  $colorPickerList.click()
+})
+
+$colorPickerList.change(function () {
+  context.strokeStyle = $colorPickerList.val();
+  // console.log("current color:", context.strokeStyle);
+  $penColor.css("fill", $colorPickerList.val());
+  $('.color-picker-path').attr('fill', context.strokeStyle);
+});
+
 // Event handler for changing stroke color using color picker
 $colorPicker.change(function () {
   context.strokeStyle = $colorPicker.val();
@@ -560,6 +658,20 @@ $pencilButton.on("touchstart", () => {
     toggleEraser();
   }
 });
+
+// gm js
+$('#canvas-controls-container .color-picker-item input').on( 'click', function(){
+  context.strokeStyle = $(this).val();
+  $('.color-picker-path').attr('fill', context.strokeStyle);
+  // gameParameters.savedEraserVals.lineWidth = context.lineWidth;
+  // context.lineWidth = gameParameters.savedPencilVals.lineWidth;
+  gameParameters.eraserSelected = false;
+  // $strokeWidthSlider.val(gameParameters.savedPencilVals.lineWidth);
+  $eraserButton.prop("id", "eraser-button");
+  $pencilButton.prop("id", "pencil-button-selected");
+})
+
+
 
 // Create globally accessible obj for accessing prompt data across functions
 let promptParameters = {
@@ -614,7 +726,7 @@ $skipButton.click(async () => {
 $promptButtons.click(function () {
   const promptsSelectedTime = Date.now();
   drawingData.selectedPromptAbsoluteNumber =
-    promptParameters.promptObj.number_absolute;
+      promptParameters.promptObj.number_absolute;
   drawingData.promptData.push({
     promptNumberAbsolute: promptParameters.promptObj.number_absolute,
     displayTime: promptsSelectedTime - promptParameters.promptShowTimestamp,
@@ -625,9 +737,12 @@ $promptButtons.click(function () {
   $prompts.hide(0);
   $skipButton.hide(0);
   $selectedPrompt.html($(this).html());
-  console.log('($(this)', $(this));
   $canvas.css("background-color", "#fff");
-  $canvasOverlay.css("display", "flex");
+  $canvasOverlay.css({display: "flex"})
+  $countdown.css({display: 'flex'});
+  // $canvasOverlay.css("display", "flex");
+  $body.addClass('gmactive');
+  // $("#canvas").css({display: 'block'});
   beginDrawing();
 });
 
@@ -651,13 +766,14 @@ const startCountdown = function () {
     drawingData.UTCEndDate = Date.now() - gameParameters.gameStartTime;
     drawingData.outOfTime = true;
     clearInterval(countdownInterval);
-    $submitEarlyButton.unbind();
+    // $submitEarlyButton.unbind();
     const dashOffset = $("#countdown-svg circle").css("stroke-dashoffset");
     $("#countdown-svg circle").css({
       animation: "none",
       "stroke-dashoffset": dashOffset
     });
-    handleGameEnd();
+    timeUp();
+    // handleGameEnd();
   }, 60000);
 
   $submitEarlyButton.click(() => {
@@ -674,14 +790,29 @@ const startCountdown = function () {
   });
 };
 
-const handleGameEnd = function () {
+
+
+const timeUp = function () {
+  $timUp.css({display: 'flex'});
+}
+
+$continuePlay.click(() => {
+  $timUp.css({display: 'none'});
+  $countdown.css({display: 'none'});
+})
+
+$gameDone.click(() => {
+  handleGameEnd(true);
+})
+
+const handleGameEnd = function (isRedirect = false) {
   $canvas.unbind();
   resetStrokeParameters();
   // $eraserButton.unbind();
-  // console.log(drawingData);
   $.ajax({
     type: "POST",
     url: "https://kanjo-web-app.herokuapp.com/drawings",
+    // url: "https://kanjo-testing-server.herokuapp.com/drawings",
     // url: "http://127.0.0.1:3000/drawings",
     data: JSON.stringify(drawingData),
     contentType: "application/json"
@@ -734,10 +865,15 @@ const handleGameEnd = function () {
   $canvas.css("background-color", "transparent");
   $canvasOverlay.hide();
   $selectedPrompt.text("Sketch & Guess");
+  $canvasOverlay.css({display: "none"})
 
   $endgameOptions.show(0);
   // centerElementInCanvas($endgameOptions);
   // $endgameOptions.css("top", ($canvasWrap.height() - $endgameOptions.height()) / 2);
+  // $("#canvas").css({display: 'none'});
+  if(isRedirect) {
+    window.location = 'https://www.mykanjo.com/members/parents/drawings';
+  }
 };
 
 $playAgainButton.click(() => {
@@ -752,7 +888,7 @@ $changeSettingsPlayAgainButton.click(() => {
 
 const openGameSettings = function () {
   $gameSettingsCard.show(0);
-  centerElementInCanvas($gameSettingsCard);
+  // centerElementInCanvas($gameSettingsCard);
 };
 
 const setPromptPreferences = function () {
@@ -790,3 +926,37 @@ const startNewRound = async function () {
   }, 0);
   resetStrokeParameters();
 };
+
+$(document).ready(()=>{
+  // const avatarsLoad = document.getElementsByClassName('player-button-avatar');
+  // console.log(avatarsLoad);
+  // addEventListener('mouseover', (event) => {});
+  // $(".player-button-avatar").mouseover(()=>{
+  //   console.log('......')
+  //   lottie.loadAnimation({
+  //     container: $(this),
+  //     render: 'svg',
+  //     loop: false,
+  //     autoplay: true,
+  //     path:  $(this).attr('data-src'),
+  //   })
+  // })
+
+  /* Play an animation on each click */
+  // let iconSkipForward = document.querySelector('.bodymovinanim');
+  //
+  // let animationSkipForward = lottie.loadAnimation({
+  //   container: iconSkipForward,
+  //   renderer: 'svg',
+  //   loop: false,
+  //   autoplay: false,
+  //   path: "https://raw.githubusercontent.com/thesvbd/Lottie-examples/master/assets/animations/skip-forward.json"
+  // });
+  //
+  // iconSkipForward.addEventListener('click', function() {
+  //   animationSkipForward.playSegments([0,60], true);
+  // });
+})
+
+
+

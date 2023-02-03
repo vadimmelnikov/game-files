@@ -1,0 +1,430 @@
+/*@font-face {font-family: "Castledown Trial"; src: url("https://db.onlinewebfonts.com/t/d24b5a782dbc3a1687aa97dc27a6bad5.eot"); src: url("https://db.onlinewebfonts.com/t/d24b5a782dbc3a1687aa97dc27a6bad5.eot?#iefix") format("embedded-opentype"), url("https://db.onlinewebfonts.com/t/d24b5a782dbc3a1687aa97dc27a6bad5.woff2") format("woff2"), url("https://db.onlinewebfonts.com/t/d24b5a782dbc3a1687aa97dc27a6bad5.woff") format("woff"), url("https://db.onlinewebfonts.com/t/d24b5a782dbc3a1687aa97dc27a6bad5.ttf") format("truetype"), url("https://db.onlinewebfonts.com/t/d24b5a782dbc3a1687aa97dc27a6bad5.svg#Castledown Discovery") format("svg"); }*/
+
+.avatarimg {
+    width: 40px;
+    height: 40px;
+}
+
+#insights-grid{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.embed-container {
+    /*margin-left: 200px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Castledown";
+}
+
+.embed-container * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.www-embed {
+    width: 100%;
+    /*padding: 30px 60px;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    background: #F1EDE8;
+}
+
+.abtx {
+    font-family: 'Castledown';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 46px;
+    color: #1B1A2D;
+    margin: 0;
+    margin-bottom: 32px;
+    margin-top: 48px;
+}
+
+#insights-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    border: 3px solid #D8ECFA;
+    padding: 20px 30px;
+    width: 100%;
+}
+
+#insights-intro h1 {
+    font-weight: 400;
+}
+
+#intro-body {
+    font-size: 13px;
+    width: 100%;
+    text-align: center;
+}
+
+#intro-body p {
+    margin: 10px 0;
+}
+
+#intro-body ul {
+    list-style-position: inside;
+}
+
+#intro-body ul li {
+    margin-left: 25px;
+}
+
+#dashboard-anchor-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding-top: ; */
+}
+
+#dashboard-anchor {
+    color: #fff;
+    text-decoration: none;
+    background-color: rgb(0, 174, 239);
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+#player-dropdown {
+    display: none;
+    width: 250px;
+    max-width: 250px;
+    margin: 10px auto 40px auto !important;
+}
+
+#dropdown-select-button {
+    display: flex;
+    height: 55px;
+    background: #fff;
+    padding: 5px 10px 5px 15px;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 8px;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#dropdown-select-player-content-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#dropdown-select-button-avatar {
+    border-radius: 100%;
+    height: 40px;
+}
+
+#dropdown-select-button-text {
+    font-size: 18px;
+}
+
+#dropdown-menu-options {
+    position: absolute;
+    width: 250px;
+    overflow-y: auto;
+    max-height: 295px;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation-name: fadeInDown;
+    -webkit-animation-name: fadeInDown;
+    animation-duration: 0s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0s;
+    -webkit-animation-fill-mode: both;
+}
+
+.dropdown-menu-option {
+    display: flex;
+    gap: 10px;
+    height: 55px;
+    cursor: pointer;
+    padding: 0 12px !important;
+    font-size: 16px;
+    color: #333;
+    border-radius: 8px;
+    align-items: center;
+    background: #fff;
+}
+
+.dropdown-menu-option:hover {
+    background: #f2f2f2;
+}
+
+.dropdown-menu-option i {
+    font-size: 25px;
+    margin-right: 12px;
+}
+
+.dropdown-menu-option-avatar {
+    border-radius: 100%;
+    /* height: 80%; */
+    height: 40px;
+}
+
+#dropdown-select-button i {
+    font-size: 25px;
+    transition: 0.3s;
+}
+
+#player-dropdown.active #dropdown-select-button i {
+    transform: rotate(-180deg);
+}
+#player-dropdown.active #dropdown-menu-options {
+    display: block;
+    opacity: 0;
+    z-index: 10;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0, 30px, 0);
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+@keyframes fadeInDown {
+    from {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+    to {
+        transform: translate3d(0, 20px, 0);
+        opacity: 0;
+    }
+}
+
+#insights-container {
+    animation: fade-in 0.4s;
+    display: flex;
+    flex-direction: column;
+}
+
+/*#insights-grid {*/
+/*    display: grid;*/
+/*    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);*/
+/*    !* width: calc(100vw - 200px); *!*/
+/*    width: 100%;*/
+/*}*/
+
+#insights-container, #insights-grid {
+    gap: 8px;
+}
+
+.insight-container {
+    width: 100%;
+    /*border-radius: 20px;*/
+    /*border: 3px solid #D8ECFA;*/
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    /*align-items: center;*/
+    gap: 15px;
+    background: #FFFFFF;
+    border-radius: 45px;
+    margin-bottom: 0px;
+}
+
+.insight-description {
+    /*font-size: 13px;*/
+    /* margin-bottom: 5px; */
+    font-family: 'Castledown';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    background: rgba(241, 237, 232, 0.4);
+    border-radius: 20px;
+    padding: 16px;
+    width: 100%;
+    min-height: 0px !important;
+}
+
+.insight-description > span {
+    display: block;
+    font-family: 'Castledown';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 21px;
+    color: #FF6745;
+    margin-top: 10px;
+}
+
+.insight-container a {
+    /* display none until stefan's got the pages sorted */
+    display: none;
+    text-decoration: none;
+    background-color: #77509c;
+    padding: 10px 15px;
+    color: #FFF;
+    border-radius: 40px;
+    transition: background-color 0.3s;
+}
+
+.insight-container a:hover {
+    background-color: #f6a030;
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    /* background-color: red; */
+    /* height: 400px; */
+    /* margin: auto; */
+}
+
+#sunburst-title {
+    margin-top: 15px;
+    color: #000000;
+    font-size: 30px;
+    margin-bottom: 0px;
+    min-height: initial;
+    font-family: 'Castledown';
+    font-weight: 900;
+}
+
+#sunburst-chart-container {
+    /* height: 750px;
+    width: 750px; */
+    /* height: 800px; */
+    aspect-ratio: 1;
+    width: 100%;
+}
+
+.mcontainer {
+    width: 1240px;
+    margin: 0px auto;
+}
+
+#side-bar {
+    display: flex;
+    /* position: fixed; */
+    /* width: 200px; */
+    /* height: 400px; */
+    /* z-index: -1; */
+    /*background-color: #fff;*/
+    animation: slide-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.2);
+    /* box-shadow: rgb(0 0 0 / 16%) 0px 10px 36px 0px, rgb(0 0 0 / 6%) 0px 0px 0px 1px; */
+    /*box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;*/
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    /*padding: 10px;*/
+    flex-direction: row;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+@keyframes slide-in {
+    0% {
+        width: 0;
+    }
+}
+
+#side-bar p {
+    margin: 0;
+}
+
+.player-button {
+    /*width: 130px;*/
+    height: auto;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /*border-radius: 60px;*/
+    gap: 15px;
+    background-color: transparent;
+    animation: fade-in 0.4s;
+    transition: opacity 0.3s, outline-color 0.3s;
+    font-weight: 300;
+    outline-color: transparent;
+    border: 1px solid rgba(189, 155, 136, 0.2);
+    border-radius: 20px;
+    padding: 8px 23px;
+}
+.mcontainer{
+    background: #f1ede7;
+}
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.player-button-selected {
+    /*outline: 1px solid purple;*/
+    /*font-weight: 600;*/
+    background: #FFFFFF;
+    border-radius: 20px;
+}
+
+
+.player-button:hover {
+    opacity: 0.75;
+}
+
+.player-button-avatar {
+    /*border-radius: 100%;*/
+    /*height: 80%;*/
+    width: 40px;
+    height: 40px;
+}
+
+.player-button-name {
+    font-family: 'Castledown';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 20px;
+    color: #1B1A2D;
+}
+
+@media only screen and (max-width: 1240px) {
+    .mcontainer{
+        width: 100%;
+        padding: 0px 30px;
+    }
+    .abtx {
+        font-size: 24px;
+    }
+    #insights-grid {
+        flex-direction: column;
+    }
+    .player-button {
+        flex-direction: column;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .mcontainer{
+        padding: 0px 16px;
+    }
+}

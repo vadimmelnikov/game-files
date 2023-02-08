@@ -557,7 +557,7 @@ window.addEventListener('DOMContentLoaded', async function() {
                         context.stroke();
                         timeoutArr.shift();
                     }
-                }, point.timeSinceGameStart);
+                }, point.timeSinceGameStart / 6);
 
                 // Add the timeout data object to the timeoutArr
                 timeoutArr.push(drawPointTimeoutObj);
